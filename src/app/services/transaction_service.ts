@@ -1,4 +1,5 @@
-import type { Transactions, Transaction } from "../interfaces";
+import type { Transaction } from "../types/transaction";
+import type { Transactions } from "../types/transactions";
 import { JSONFilePreset } from 'lowdb/node';
 import { customAlphabet } from 'nanoid';
 
