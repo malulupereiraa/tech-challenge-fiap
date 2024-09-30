@@ -140,7 +140,7 @@ npm run storybook
 ### Apagar uma transação
 
 <details>
- <summary><code>DELETE</code> <code><b>/api/transactions/1</b></code></summary>
+ <summary><code>DELETE</code> <code><b>/api/transactions/{id}</b></code></summary>
 
 ##### Parameters
 
