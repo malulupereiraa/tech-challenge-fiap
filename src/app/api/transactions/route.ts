@@ -1,12 +1,12 @@
 import { listTransactions, createTransaction } from '../../services/transaction_service';
 
-export async function GET(request: Request) {
+export const GET = async (request: Request) => {
   const transactions = await listTransactions();
 
   return Response.json(transactions);
 }
 
-export async function POST(request: Request) {
+export const POST = async (request: Request) => {
   const data = await request.json();
   const id = await createTransaction(data as object);
 

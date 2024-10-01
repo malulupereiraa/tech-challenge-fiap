@@ -3,14 +3,14 @@ import type { Transactions } from "../types/transactions";
 import { JSONFilePreset } from 'lowdb/node';
 import { customAlphabet } from 'nanoid';
 
-export async function listTransactions() {
+export const listTransactions = async () => {
   const db = await openDB();
   const { transactions } = db.data;
 
   return transactions;
 }
 
-export async function createTransaction(data: object) {
+export const createTransaction = async (data: object) => {
   const db = await openDB();
   const nanoid = customAlphabet('1234567890abcdef', 9);
   const id = nanoid();
@@ -24,13 +24,13 @@ export async function createTransaction(data: object) {
   return id;
 }
 
-export async function showTransaction(id: string): Promise<Transaction | undefined> {
+export const showTransaction = async (id: string): Promise<Transaction | undefined> => {
   const db = await openDB();
 
   return db.data.transactions.find((user: Transaction) => user.id === id);
 }
 
-export async function deleteTransaction(id: string) {
+export const deleteTransaction = async (id: string) => {
   const db = await openDB();
   const transaction: Transaction | undefined = db.data.transactions.find((u: Transaction) => u.id === id);
 
@@ -43,10 +43,10 @@ export async function deleteTransaction(id: string) {
   return transaction;
 }
 
-export async function updateTransaction(
+export const updateTransaction = async (
   id: string,
   userData: Transaction
-): Promise<Transaction | undefined> {
+): Promise<Transaction | undefined> => {
   const db = await openDB();
   const { transactions } = db.data;
   const index: number = db.data.transactions.findIndex((user: Transaction) => user.id === id);
@@ -67,7 +67,7 @@ export async function updateTransaction(
   return newUserData;
 }
 
-async function openDB() {
+const openDB = async () => {
   const defaultData: Transactions = { transactions: [] };
 
   return JSONFilePreset<Transactions>('db.json', defaultData);
