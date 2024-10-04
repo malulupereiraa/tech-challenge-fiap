@@ -94,6 +94,28 @@ const Footer: React.FC = () => {
   )
 }
 
+const vantagens = [
+  {
+    icon: "img_home/Ícone Presente.svg",
+    title: "Conta e cartão gratuitos",
+    description: "Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção.",
+  },
+  {
+    icon: "img_home/Ícone Saque.svg",
+    title: "Saques sem custo",
+    description: "Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h.",
+  },
+  {
+    icon: "img_home/Ícone Pontos.svg",
+    title: "Programa de pontos",
+    description: "Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!",
+  },
+  {
+    icon: "img_home/Ícone Dispositivos.svg",
+    title: "Seguro Dispositivos",
+    description: "Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.",
+  },
+];
 
 export default function Home() {
   return (
@@ -103,14 +125,15 @@ export default function Home() {
       <main className="flex-grow-1" style={{ background: theme_color.background_gradient }}>
         <div className='container mt-4'>
           <div className='d-flex flex-column'>
-            <div className='d-flex flex-row align-items-center'>
+            <div className='d-flex flex-column flex-md-row align-items-center'>
               <div style={{ ...theme_fonts.header_semibold, color: theme_color.dark, fontSize: font_size.fontsizexlarge }}>
                 Experimente mais liberdade no controle da sua vida financeira. Crie sua conta com a gente!
               </div>
-              <div>
+              <div className='mt-3 mt-md-0'>
                 <Image
                   src="img_home/Ilustração Banner.svg"
                   alt="Descrição da imagem"
+                  className="img-fluid w-md-100"
                   width={661.06}
                   height={412.12}
                 />
@@ -128,57 +151,25 @@ export default function Home() {
 
             <div className='d-flex flex-column mt-2'>
               <div className='d-flex justify-content-center mb-3'>
-                <h3 style={{ ...theme_fonts.header_semibold, color: theme_color.dark, fontSize: font_size.fontsizexlarge }}>Vantagens do nosso banco:</h3>
+                <h3 style={{ ...theme_fonts.header_semibold, color: theme_color.dark, fontSize: font_size.fontsizexlarge }}>
+                  Vantagens do nosso banco:
+                </h3>
               </div>
               <div className="row mt-2">
-                <div className="col-12 col-md-6 col-lg-3 mb-4">
-                  <div className="d-flex flex-column align-items-center">
-                    <Image
-                      src="img_home/Ícone Presente.svg"
-                      alt="Descrição da imagem"
-                      width={60}
-                      height={50}
-                    />
-                    <h5 style={{ color: theme_color.success }}>Conta e cartão gratuitos</h5>
-                    <span style={{ color: theme_color.grey }} className='text-center'>Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção.</span>
+                {vantagens.map((vantagem, index) => (
+                  <div key={index} className="col-12 col-md-6 col-lg-3 mb-4">
+                    <div className="d-flex flex-column align-items-center">
+                      <Image
+                        src={vantagem.icon}
+                        alt={vantagem.title}
+                        width={60}
+                        height={50}
+                      />
+                      <h5 style={{ color: theme_color.success }}>{vantagem.title}</h5>
+                      <span style={{ color: theme_color.grey }} className='text-center'>{vantagem.description}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="col-12 col-md-6 col-lg-3 mb-4">
-                  <div className="d-flex flex-column align-items-center">
-                    <Image
-                      src="img_home/Ícone Saque.svg"
-                      alt="Descrição da imagem"
-                      width={60}
-                      height={50}
-                    />
-                    <h5 style={{ color: theme_color.success }}>Saques sem custo</h5>
-                    <span style={{ color: theme_color.grey }} className='text-center'>Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h.</span>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6 col-lg-3 mb-4">
-                  <div className="d-flex flex-column align-items-center">
-                    <Image
-                      src="img_home/Ícone Pontos.svg"
-                      alt="Descrição da imagem"
-                      width={60}
-                      height={50}
-                    />
-                    <h5 style={{ color: theme_color.success }}>Programa de pontos</h5>
-                    <span style={{ color: theme_color.grey }} className='text-center'>Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!</span>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6 col-lg-3 mb-4">
-                  <div className="d-flex flex-column align-items-center">
-                    <Image
-                      src="img_home/Ícone Dispositivos.svg"
-                      alt="Descrição da imagem"
-                      width={60}
-                      height={50}
-                    />
-                    <h5 style={{ color: theme_color.success }}>Seguro Dispositivos</h5>
-                    <span style={{ color: theme_color.grey }} className='text-center'>Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica.</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
