@@ -9,7 +9,8 @@ export const theme_color = {
     secondary: '#FF5031',
     green_light: '#E4EDE3',
     disabled: '#8B8B8B',
-    error: '#BD0000'
+    error: '#BD0000',
+    background_gradient: 'linear-gradient(180deg, #004D61 0%, #FFFFFF 100%)'
 }
 
 export const theme_fonts = {
@@ -20,4 +21,11 @@ export const theme_fonts = {
         fontWeight: '600',
         lineHeight: '21.78px',        
     }
+}
+
+export const font_size = {
+    fontsizesmall: '14px',
+    fontsizemedium: '16px',
+    fontsizelarge: '18px',
+    fontsizexlarge: '28px',
 }
