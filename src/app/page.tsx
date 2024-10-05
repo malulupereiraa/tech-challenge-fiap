@@ -5,10 +5,12 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
+
     <header className="p-3" style={{ backgroundColor: theme_color.dark }}>
+
       <div className="container">
         <div className="d-flex flex-row justify-content-between align-items-center">
-    
+
           <div className="d-none d-md-flex flex-row align-items-center gap-5">
             <Image
               src="/Logo.svg"
@@ -26,11 +28,11 @@ const Header: React.FC = () => {
             <div>
 
               <div className="dropdown">
-              <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          
+                <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
                   <i className="bi bi-list" style={{ color: theme_color.success, fontSize: '32px' }}></i>
                 </button>
-    
+
                 <ul className="dropdown-menu">
                   <li><a className="dropdown-item" href="#sobre">Sobre</a></li>
                   <li><a className="dropdown-item" href="#servicos">Serviços</a></li>
@@ -38,7 +40,7 @@ const Header: React.FC = () => {
               </div>
             </div>
 
-      
+
             <div>
               <Image
                 src="/Logo.svg"
@@ -49,7 +51,7 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-     
+
           <div className="d-none d-md-flex gap-3">
             <Link href="/home">
               <button className="btn btn-success">Abrir minha conta</button>
