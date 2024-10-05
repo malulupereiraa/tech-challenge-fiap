@@ -7,32 +7,61 @@ const Header: React.FC = () => {
   return (
     <header className="p-3" style={{ backgroundColor: theme_color.dark }}>
       <div className="container">
-        <div className='d-flex flex-row justify-content-between align-items-center'>
-          <div className='d-flex flex-row align-items-center gap-5'>
+        <div className="d-flex flex-row justify-content-between align-items-center">
+    
+          <div className="d-none d-md-flex flex-row align-items-center gap-5">
             <Image
-              src="/Logo.svg" // Caminho da imagem
+              src="/Logo.svg"
               alt="Descrição da imagem"
-              width={145.69}  // Largura desejada
-              height={32} // Altura desejada
+              width={145.69}
+              height={32}
             />
-            <div className='d-flex gap-4'>
-              <label style={{ ...theme_fonts.header_semibold, color: theme_color.white }}>Sobre</label>
-              <label style={{ ...theme_fonts.header_semibold, color: theme_color.white }}>Serviços</label>
+            <div className="d-flex gap-4">
+              <label style={{ ...theme_fonts.header_semibold, color: theme_color.success }}>Sobre</label>
+              <label style={{ ...theme_fonts.header_semibold, color: theme_color.success }}>Serviços</label>
             </div>
           </div>
 
-          <div className='d-none d-md-flex  gap-3'>
+          <div className="d-flex d-md-none justify-content-between align-items-center w-100">
+            <div>
+
+              <div className="dropdown">
+              <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          
+                  <i className="bi bi-list" style={{ color: theme_color.success, fontSize: '32px' }}></i>
+                </button>
+    
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#sobre">Sobre</a></li>
+                  <li><a className="dropdown-item" href="#servicos">Serviços</a></li>
+                </ul>
+              </div>
+            </div>
+
+      
+            <div>
+              <Image
+                src="/Logo.svg"
+                alt="Descrição da imagem"
+                width={145.69}
+                height={32}
+              />
+            </div>
+          </div>
+
+     
+          <div className="d-none d-md-flex gap-3">
             <Link href="/home">
               <button className="btn btn-success">Abrir minha conta</button>
             </Link>
             <button className="btn btn-outline-success">Já tenho conta</button>
           </div>
         </div>
-
       </div>
     </header>
   );
 };
+
 
 
 const Footer: React.FC = () => {

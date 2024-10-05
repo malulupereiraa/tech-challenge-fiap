@@ -15,6 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+          <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+        />
       <body>
         {children}
       </body>
