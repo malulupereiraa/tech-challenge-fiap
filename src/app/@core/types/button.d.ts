@@ -12,7 +12,7 @@ export interface ButtonProps {
     rounded?: boolean;    
     variant?: string;
      /** Optional click handler */
-    onClick?: () => void;
+    onClick?: () => void | undefined;
     // body: any;
     // sizeModal?: any;
     // hasFooter: boolean;
