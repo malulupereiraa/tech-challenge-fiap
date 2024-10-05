@@ -1,5 +1,5 @@
-import type { Transaction } from "../types/transaction";
-import type { Transactions } from "../types/transactions";
+import type { Transaction } from "../models/transaction";
+import type { Transactions } from "../models/transactions";
 import { JSONFilePreset } from 'lowdb/node';
 import { customAlphabet } from 'nanoid';
 

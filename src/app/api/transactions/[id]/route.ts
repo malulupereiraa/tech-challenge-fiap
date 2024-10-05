@@ -1,5 +1,5 @@
-import type { Transaction } from "../../../types/transaction";
-import { showTransaction, updateTransaction, deleteTransaction } from '../../../services/transaction_service';
+import type { Transaction } from "../../../@core/models/transaction";
+import { showTransaction, updateTransaction, deleteTransaction } from '../../../@core/services/transaction_service';
 
 type Params = {
   id: string
