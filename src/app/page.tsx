@@ -1,13 +1,32 @@
 'use client'
-import { font_size, theme_color, theme_fonts } from './@theme/theme'
-import Link from 'next/link';
+import ButtonTCF from "./@core/components/button/Button";
+import { BsTrash3Fill } from "react-icons/bs";
+import { ImPencil } from "react-icons/im";
+import { themed } from "./@theme/themed";
 import Image from 'next/image';
+import Link from "next/link";
+import { GrMenu } from "react-icons/gr";
+// export default function Home() {
+//   return ( 
+//     <>
+//       <ButtonTCF size={'sm'} label={'Botão de Teste SM'} disabled={false} />
+//       <ButtonTCF size={undefined} label={'Botão de Teste MD'} disabled={false} />
+//       <ButtonTCF size={'lg'} label={'Botão de Teste LG'} disabled={false} />
+//       <ButtonTCF size={'lg'} label={'R'} disabled={false} rounded={true} />
+//       <ButtonTCF size={'lg'} icon={<BsTrash3Fill />} disabled={false} rounded={true} />
+//       <ButtonTCF size={'lg'} icon={<ImPencil />} disabled={false} rounded={true} />
+//       <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"green"} />
+//       <ButtonTCF size={'sm'} label={'Já Tenho Conta'} disabled={false} variant={"green-outline"} />
+//       <ButtonTCF size={'sm'} label={'Voltar ao Início'} disabled={false} variant={"orange"} />
+//       <ButtonTCF size={'sm'} label={'Concluir Transação'} disabled={false} variant={"base"} />
+//     </>
+//   );
+// }
 
 const Header: React.FC = () => {
   return (
 
-    <header className="p-3" style={{ backgroundColor: theme_color.dark }}>
-
+    <header className="p-3" style={{ backgroundColor: themed.themeColor.dark }}>
       <div className="container">
         <div className="d-flex flex-row justify-content-between align-items-center">
 
@@ -19,8 +38,8 @@ const Header: React.FC = () => {
               height={32}
             />
             <div className="d-flex gap-4">
-              <label style={{ ...theme_fonts.header_semibold, color: theme_color.success }}>Sobre</label>
-              <label style={{ ...theme_fonts.header_semibold, color: theme_color.success }}>Serviços</label>
+              <label style={{ ...themed.themeFonts.headerSemibold, color: themed.themeColor.success }}>Sobre</label>
+              <label style={{ ...themed.themeFonts.headerSemibold, color: themed.themeColor.success }}>Serviços</label>
             </div>
           </div>
 
@@ -29,8 +48,8 @@ const Header: React.FC = () => {
 
               <div className="dropdown">
                 <button className="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                  <i className="bi bi-list" style={{ color: theme_color.success, fontSize: '32px' }}></i>
+                  <GrMenu  style={{ color: themed.themeColor.success, fontSize: '32px' }} />
+                  {/* <i className="bi bi-list" style={{ color: themed.themeColor.success, fontSize: '32px' }}></i> */}
                 </button>
 
                 <ul className="dropdown-menu">
@@ -54,9 +73,9 @@ const Header: React.FC = () => {
 
           <div className="d-none d-md-flex gap-3">
             <Link href="/home">
-              <button className="btn btn-success">Abrir minha conta</button>
+              <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"green"} />
             </Link>
-            <button className="btn btn-outline-success">Já tenho conta</button>
+            <ButtonTCF size={'sm'} label={'Já Tenho Conta'} disabled={false} variant={"green-outline"} />
           </div>
         </div>
       </div>
@@ -72,8 +91,8 @@ const Footer: React.FC = () => {
       <div className='container'>
         <div className='d-flex flex-column flex-md-row justify-content-between pt-4'>
           <div className='col-12 col-md-4 mb-3 mb-md-0 '>
-            <ul className='list-unstyled' style={{ color: theme_color.white, fontSize: font_size.fontsizemedium }}>
-              <li className='mb-2' style={{ ...theme_fonts.header_semibold }}>Serviços</li>
+            <ul className='list-unstyled' style={{ color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>
+              <li className='mb-2' style={{ ...themed.themeFonts.headerSemibold }}>Serviços</li>
               <li className='mb-1'>Conta corrente</li>
               <li className='mb-1'>Conta PJ</li>
               <li className='mb-1'>Cartão de crédito</li>
@@ -81,8 +100,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div className='col-12 col-md-4 mb-3 mb-md-0 '>
-            <ul className='list-unstyled' style={{ color: theme_color.white, fontSize: font_size.fontsizemedium }}>
-              <li className='mb-2' style={{ ...theme_fonts.header_semibold }}>Contato</li>
+            <ul className='list-unstyled' style={{ color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>
+              <li className='mb-2' style={{ ...themed.themeFonts.headerSemibold }}>Contato</li>
               <li className='mb-1'>0800 004 250 08</li>
               <li className='mb-1'>teste@gmail.com</li>
               <li className='mb-1'>ouvidoria@outlook.com</li>
@@ -90,7 +109,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className='col-12 col-md-4 mb-3 mb-md-0 d-flex flex-column align-items-center'>
-            <span style={{ ...theme_fonts.header_semibold, color: theme_color.white, fontSize: font_size.fontsizemedium }}>Desenvolvido com Amor</span>
+            <span style={{ ...themed.themeFonts.headerSemibold, color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>Desenvolvido com Amor</span>
             <Image
               src="img_home/Logo Bytebank Branco.svg"
               alt="Descrição da imagem"
@@ -153,11 +172,11 @@ export default function Home() {
     <div className="d-flex flex-column min-vh-100" >
       <Header />
 
-      <main className="flex-grow-1" style={{ background: theme_color.background_gradient }}>
+      <main className="flex-grow-1" style={{ background: themed.themeColor.background_gradient }}>
         <div className='container mt-4'>
           <div className='d-flex flex-column'>
             <div className='d-flex flex-column flex-md-row align-items-center'>
-              <div style={{ ...theme_fonts.header_semibold, color: theme_color.dark, fontSize: font_size.fontsizexlarge }}>
+              <div style={{ ...themed.themeFonts.headerSemibold, color: themed.themeColor.dark, fontSize: themed.font_size.fontsizexlarge }}>
                 Experimente mais liberdade no controle da sua vida financeira. Crie sua conta com a gente!
               </div>
               <div className='mt-3 mt-md-0'>
@@ -173,16 +192,20 @@ export default function Home() {
             </div>
 
             <div className='gap-3 d-flex align-items-center justify-content-center d-md-none mb-4'>
-              <Link href="/home">
+              {/* <Link href="/home">
                 <button className="btn btn-dark">Abrir minha conta</button>
               </Link>
-              <button className="btn btn-outline-dark">Já tenho conta</button>
+              <button className="btn btn-outline-dark">Já tenho conta</button> */}
+              <Link href="/home">
+                <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"dark"} />
+              </Link>
+              <ButtonTCF size={'sm'} label={'Já Tenho Conta'} disabled={false} variant={"dark-outline"} />
             </div>
 
 
             <div className='d-flex flex-column mt-2'>
               <div className='d-flex justify-content-center mb-3'>
-                <h3 style={{ ...theme_fonts.header_semibold, color: theme_color.dark, fontSize: font_size.fontsizexlarge }}>
+                <h3 style={{ ...themed.themeFonts.headerSemibold, color: themed.themeColor.dark, fontSize: themed.font_size.fontsizexlarge }}>
                   Vantagens do nosso banco:
                 </h3>
               </div>
@@ -196,8 +219,8 @@ export default function Home() {
                         width={60}
                         height={50}
                       />
-                      <h5 style={{ color: theme_color.success }}>{vantagem.title}</h5>
-                      <span style={{ color: theme_color.grey }} className='text-center'>{vantagem.description}</span>
+                      <h5 style={{ color: themed.themeColor.success }}>{vantagem.title}</h5>
+                      <span style={{ color: themed.themeColor.grey }} className='text-center'>{vantagem.description}</span>
                     </div>
                   </div>
                 ))}

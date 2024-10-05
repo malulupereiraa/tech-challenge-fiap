@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { StyledRoot } from "./@theme/styledRoot";
+import StyledComponentsRegistry from "./@core/lib/registry";
+
+import { Container } from "react-bootstrap";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,12 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
       </head>
-      <body>
-        {children}
+      <body className={`antialiased`}>
+        <Container fluid>
+          <AppRouterCacheProvider>
+            <StyledComponentsRegistry>
+              <StyledRoot>{children}</StyledRoot>
+            </StyledComponentsRegistry>
+          </AppRouterCacheProvider>
+        </Container>
       </body>
     </html>
   );
