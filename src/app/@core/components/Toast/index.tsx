@@ -4,18 +4,7 @@ import BaseToast from 'react-bootstrap/Toast';
 import BaseToastContainer from 'react-bootstrap/ToastContainer';
 import ToastContainer from './ToastContainer';
 import ToastIconWrapper from './ToastIconWrapper';
-
-export interface ToastProps {
-  /** An optional title */
-  title?: string,
-  /** The toast's icon */
-  icon?: 'success' | 'error' | 'warning' | 'info',
-  /** The toast's message */
-  message: string,
-  /** The amount of time in milliseconds after which the toast will disappear */
-  autohideDelay?: number,
-  absolutePosition?: boolean
-};
+import ToastProps from '../../types/toast';
 
 export default ({
   icon = 'info',
