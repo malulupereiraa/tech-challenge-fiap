@@ -2,7 +2,7 @@
 
 export interface ModalProps {
   isOpen: boolean;
-  title: string;
+  title?: string;
   body: any;
   sizeModal?: any;
   hasFooter: boolean;

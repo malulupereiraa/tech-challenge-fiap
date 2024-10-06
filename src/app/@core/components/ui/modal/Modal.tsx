@@ -1,5 +1,5 @@
 import { Button, Modal } from "react-bootstrap";
-import { ModalProps } from "../../types/modal";
+import { ModalProps } from "../../../props/modal";
 import ButtonTCF from "../button/Button";
 
 const ModalTCF: React.FC<ModalProps> = ({
@@ -24,9 +24,15 @@ const ModalTCF: React.FC<ModalProps> = ({
           type ? (type === "delete" ? "delete-modal" : "home-modal") : ""
         }
       >
-        <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
+        {title ? (
+          <>
+            <Modal.Header closeButton>
+              <Modal.Title>{title}</Modal.Title>
+            </Modal.Header>
+          </>
+        ) : (
+          <></>
+        )}
         <Modal.Body>{body}</Modal.Body>
         {hasFooter ? (
           <>

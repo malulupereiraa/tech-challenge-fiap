@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
-import ButtonTCF from "./@core/components/button/Button";
-import ModalTCF from "./@core/components/modal/Modal";
+import ButtonTCF from "./@core/components/ui/button/Button";
+import ModalTCF from "./@core/components/ui/modal/Modal";
 import { BsTrash3Fill } from "react-icons/bs";
 import { ImPencil } from "react-icons/im";
 import { Col, Row } from "react-bootstrap";
+import CadastroForm from "./@core/components/forms/Cadastro";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -33,6 +35,11 @@ export default function Home() {
   const handleCloseSubmit = async () => {
     // TODO: function delete
     setIsModalOpen(false);
+  };
+
+  const handleCadastroForm = (formData: any) => {
+    // TODO: function Cadastro Form
+    console.log(formData);
   };
 
   return (
@@ -115,9 +122,8 @@ export default function Home() {
         onSubmitAction={handleCloseSubmit}
       />
       <ModalTCF
-        title="Modals da Home"
         isOpen={isModalHomeOpen}
-        body={"TESTANDO 123"}
+        body={<CadastroForm onSubmitAction={handleCadastroForm} />}
         hasFooter={false}
         center={true}
         sizeModal="md"
