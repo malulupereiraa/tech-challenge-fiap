@@ -4,7 +4,7 @@ import BaseToast from 'react-bootstrap/Toast';
 import BaseToastContainer from 'react-bootstrap/ToastContainer';
 import ToastContainer from './ToastContainer';
 import ToastIconWrapper from './ToastIconWrapper';
-import ToastProps from '../../types/toast';
+import ToastProps from '../../props/toast';
 
 export default ({
   icon = 'info',
