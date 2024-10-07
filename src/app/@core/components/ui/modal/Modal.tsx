@@ -30,27 +30,23 @@ const ModalTCF: React.FC<ModalProps> = ({
             </Modal.Header>
         )}
         <Modal.Body>{body}</Modal.Body>
-        {hasFooter ? (
-          <>
-            <Modal.Footer>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => onCloseAction(type)}
-              >
-                Cancelar
-              </Button>
-              <ButtonTCF
-                size={"sm"}
-                label={"OK"}
-                disabled={false}
-                variant={"green"}
-                onClick={onSubmitAction}
-              />
-            </Modal.Footer>
-          </>
-        ) : (
-          <></>
+        {hasFooter && (
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => onCloseAction(type)}
+            >
+              Cancelar
+            </Button>
+            <ButtonTCF
+              size={"sm"}
+              label={"OK"}
+              disabled={false}
+              variant={"green"}
+              onClick={onSubmitAction}
+            />
+          </Modal.Footer>
         )}
       </Modal>
     </>
