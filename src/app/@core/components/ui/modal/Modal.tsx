@@ -24,14 +24,10 @@ const ModalTCF: React.FC<ModalProps> = ({
           type ? (type === "delete" ? "delete-modal" : "home-modal") : ""
         }
       >
-        {title ? (
-          <>
+        {title && (
             <Modal.Header closeButton>
               <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
-          </>
-        ) : (
-          <></>
         )}
         <Modal.Body>{body}</Modal.Body>
         {hasFooter ? (
