@@ -20,8 +20,9 @@ export default {
       description: "How large should the button be?",
     },
     variant: {
-      description:
-        "Button Color. There are: base, orange, dark, dark-outline, green, green-outline,",
+      control: "radio",
+      description: "Button color",
+      options: ["base", "orange", "dark", "dark-outline", "green", "green-outline"]
     },
     rounded: {
       control: "boolean",
