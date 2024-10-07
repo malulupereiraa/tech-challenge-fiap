@@ -10,7 +10,8 @@ export const themed = {
     secondary: '#FF5031',
     backgroundBase: '#E4EDE3',
     disabled: '#8B8B8B',
-    error: '#BD0000'
+    error: '#BD0000',
+    grey_text: '#444444'
   },
   themeFonts: {
     inter: 'Inter Variable',
