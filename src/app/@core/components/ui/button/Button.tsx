@@ -14,6 +14,12 @@ const ButtonTCF: React.FC<ButtonProps> = ({
   icon,
   onClick,
 }) => {
+  const buttonClassName = () => {
+    if (rounded && icon) return "rounded-circle w-icon";
+    if (rounded) return "rounded-circle";
+    if (icon) return "w-icon";
+  };
+
   return (
     <>
       <Button
@@ -21,15 +27,7 @@ const ButtonTCF: React.FC<ButtonProps> = ({
         variant={variant ? variant : "primary"}
         size={size}
         disabled={disabled}
-        className={
-          rounded && icon
-            ? "rounded-circle w-icon"
-            : rounded
-            ? "rounded-circle"
-            : icon
-            ? "w-icon"
-            : ""
-        }
+        className={buttonClassName()}
         onClick={onClick}
       >
         {icon ? icon : label}

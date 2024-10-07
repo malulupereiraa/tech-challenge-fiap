@@ -24,37 +24,29 @@ const ModalTCF: React.FC<ModalProps> = ({
           type ? (type === "delete" ? "delete-modal" : "home-modal") : ""
         }
       >
-        {title ? (
-          <>
+        {title && (
             <Modal.Header closeButton>
               <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
-          </>
-        ) : (
-          <></>
         )}
         <Modal.Body>{body}</Modal.Body>
-        {hasFooter ? (
-          <>
-            <Modal.Footer>
-              <Button
-                variant="secondary"
-                size="sm"
-                onClick={() => onCloseAction(type)}
-              >
-                Cancelar
-              </Button>
-              <ButtonTCF
-                size={"sm"}
-                label={"OK"}
-                disabled={false}
-                variant={"green"}
-                onClick={onSubmitAction}
-              />
-            </Modal.Footer>
-          </>
-        ) : (
-          <></>
+        {hasFooter && (
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => onCloseAction(type)}
+            >
+              Cancelar
+            </Button>
+            <ButtonTCF
+              size={"sm"}
+              label={"OK"}
+              disabled={false}
+              variant={"green"}
+              onClick={onSubmitAction}
+            />
+          </Modal.Footer>
         )}
       </Modal>
     </>
