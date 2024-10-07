@@ -19,6 +19,7 @@ const ButtonTCF: React.FC<ButtonProps> = ({
     if (rounded) return "rounded-circle";
     if (icon) return "w-icon";
   };
+
   return (
     <>
       <Button
