@@ -1,4 +1,4 @@
-import { listTransactions, createTransaction } from '../../services/transaction_service';
+import { listTransactions, createTransaction } from '../../@core/services/transaction_service';
 
 export const GET = async (request: Request) => {
   const transactions = await listTransactions();

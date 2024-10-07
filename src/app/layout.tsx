@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { StyledRoot } from "./@theme/styledRoot";
+import StyledComponentsRegistry from "./@core/lib/registry";
+
+import { Container } from "react-bootstrap";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+      <html lang="pt-br">
+        <body className={`antialiased`}>
+          <Container fluid>
+            <AppRouterCacheProvider>
+              <StyledComponentsRegistry>
+                <StyledRoot>{children}</StyledRoot>
+              </StyledComponentsRegistry>
+            </AppRouterCacheProvider>
+          </Container>
+        </body>
+      </html>
   );
 }
