@@ -75,10 +75,10 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmitAction }) => {
                   className="mb-3"
                   controlId="exampleForm.ControlInput2"
                 >
-                  <Form.Label>Email</Form.Label>
+                  <Form.Label>E-mail</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="Digite seu email"
+                    placeholder="Digite seu e-mail"
                     name="email"
                     value={values.email}
                     onChange={handleChange}
