@@ -1,20 +1,19 @@
-
-import { useState } from 'react';
-import BaseToast from 'react-bootstrap/Toast';
-import BaseToastContainer from 'react-bootstrap/ToastContainer';
-import ToastContainer from './ToastContainer';
-import ToastIconWrapper from './ToastIconWrapper';
-import ToastProps from '../../props/toast';
+import { useState } from "react";
+import BaseToast from "react-bootstrap/Toast";
+import BaseToastContainer from "react-bootstrap/ToastContainer";
+import ToastContainer from "./ToastContainer";
+import ToastIconWrapper from "./ToastIconWrapper";
+import ToastProps from "../../../props/toast";
 
 export default ({
-  icon = 'info',
+  icon = "info",
   message,
   title,
   autohideDelay,
-  absolutePosition = true
+  absolutePosition = true,
 }: ToastProps) => {
   const [show, setShow] = useState(true);
-  const autohideEnabled = (autohideDelay) ? true : false;
+  const autohideEnabled = autohideDelay ? true : false;
   const close = () => setShow(false);
 
   const contents: React.JSX.Element = (
@@ -25,12 +24,12 @@ export default ({
       autohide={autohideEnabled}
     >
       <BaseToast.Body>
-        <div className='toast-content'>
+        <div className="toast-content">
           <div>
             <ToastIconWrapper iconName={icon} />
           </div>
           <div>
-            {title && (<h6>{title}</h6>)}
+            {title && <h6>{title}</h6>}
             {message}
           </div>
         </div>
@@ -41,7 +40,7 @@ export default ({
   return (
     <ToastContainer>
       {absolutePosition ? (
-        <BaseToastContainer position='top-center'>
+        <BaseToastContainer position="top-center">
           {contents}
         </BaseToastContainer>
       ) : (
