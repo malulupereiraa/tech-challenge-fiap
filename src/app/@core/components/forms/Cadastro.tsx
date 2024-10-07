@@ -14,7 +14,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmitAction }) => {
     email: yup
       .string()
       .email("Por favor, digite um e-mail válido!")
-      .required("Por favor digite seu e-mail"),
+      .required("Por favor, digite seu e-mail"),
     password: yup.string().required(),
     terms: yup.bool().required().oneOf([true], "Os Termos devem ser aceitos."),
   });
