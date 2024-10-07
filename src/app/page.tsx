@@ -7,10 +7,13 @@ import { BsTrash3Fill } from "react-icons/bs";
 import { ImPencil } from "react-icons/im";
 import { Col, Row } from "react-bootstrap";
 import CadastroForm from "./@core/components/forms/Cadastro";
+import CustomInput from "./@core/components/ui/input/Input";
+import {formatCurrency} from "../app/@core/utils/masks"
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isModalHomeOpen, setIsModalHomeOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string>(formatCurrency("000"));
 
   const handleOpen = (type: string) => {
     switch (type) {
@@ -40,6 +43,10 @@ export default function Home() {
   const handleCadastroForm = (formData: any) => {
     // TODO: function Cadastro Form
     console.log(formData);
+  };
+
+  const handleInputValue = (value: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(formatCurrency(value.target.value));
   };
 
   return (
@@ -131,6 +138,9 @@ export default function Home() {
         onCloseAction={handleClose}
         onSubmitAction={handleCloseSubmit}
       />
+      <Col xs={6} sm={6} md={6} lg={6}>        
+        <CustomInput type="currency" value={value} onChange={handleInputValue} width={"250px"}/>
+      </Col>
     </>
   );
 }
