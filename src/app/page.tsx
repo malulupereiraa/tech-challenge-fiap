@@ -1,11 +1,15 @@
 'use client'
-import ButtonTCF from "./@core/components/button/Button";
+
 import { themed } from "./@theme/themed";
 import Image from 'next/image';
 import Link from "next/link";
 import { GrMenu } from "react-icons/gr";
 import { Col, Container, Row } from "react-bootstrap";
 import { BackgroundHome } from "./@theme/custom/BackgroundHome";
+import ButtonTCF from "./@core/components/ui/button/Button";
+import { useState } from "react";
+import ModalTCF from "./@core/components/ui/modal/Modal";
+import CadastroForm from "./@core/components/forms/Cadastro";
 
 
 const Header: React.FC = () => {
@@ -39,7 +43,7 @@ const Header: React.FC = () => {
 
             <Col xs={12} sm={12} md={5} lg={5} className="d-none d-md-flex justify-content-end gap-3">
               <Link href="/home">
-                <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"green"} />
+                <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"green"}  />
               </Link>
               <ButtonTCF size={'sm'} label={'Já Tenho Conta'} disabled={false} variant={"green-outline"} />
             </Col>
@@ -246,14 +250,57 @@ const Main: React.FC = () => {
 
 
 export default function Home() {
+  const [isModalHomeOpen, setIsModalHomeOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleOpen = (type: string) => {
+    switch (type) {
+      case "delete":
+        setIsModalOpen(true);
+        break;
+      default:
+        setIsModalHomeOpen(true);
+    }
+  };
+
+  const handleClose = (type: string) => {
+    switch (type) {
+      case "delete":
+        setIsModalOpen(false);
+        break;
+      default:
+        setIsModalHomeOpen(false);
+    }
+  };
+
+  const handleCloseSubmit = async () => {
+    // TODO: function delete
+    setIsModalOpen(false);
+  };
+
+  const handleCadastroForm = (formData: any) => {
+    // TODO: function Cadastro Form
+    console.log(formData);
+  };
+
+
   return (
-
-
     <Row style={{ overflowX: "hidden" }}>
-      <Header />
-      <Main />
-      <Footer />
-    </Row>
+      <Header/>
+      <Main/>
+      <Footer/>
 
-  );
+      <ModalTCF
+        isOpen={isModalHomeOpen}
+        body={<CadastroForm onSubmitAction={handleCadastroForm} />}
+        hasFooter={false}
+        center={true}
+        sizeModal="md"
+        type={"fullheight"}
+        onCloseAction={handleClose}
+        onSubmitAction={handleCloseSubmit}
+      />
+    </Row>
+    
+  )
 }

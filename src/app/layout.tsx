@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { StyledRoot } from "./@theme/styledRoot";
 import StyledComponentsRegistry from "./@core/lib/registry";
 
