@@ -1,0 +1,99 @@
+
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    width: 180px;
+    height: 100vh;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.itensMenu {
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+}
+
+
+.itensMenu a {
+    text-decoration: none;
+    padding: 15px 0;
+    /* color: var(--dark); */
+}
+
+/* .itensMenuBorder {
+    border-bottom: var(--dark);
+} */
+
+/* .itensMenu a:hover {
+    font-weight: 700;
+    color: var(--success);
+}
+
+.itensMenu a:link {
+    color: var(--dark);
+
+} */
+
+/* .itensMenu a:visited {
+    color: var(--success);
+    border-bottom: 1px solid var(--success);
+} */
+
+/* .itensMenu a:active {
+    color: var(--secondary);
+
+} */
+
+.itensMenu a {
+    text-decoration: none;
+    margin: 0 2%;
+
+}
+
+@media (min-width: 361px) and (max-width: 720px) {
+    .menuContainer {
+        align-items: center;
+        padding: 5px 20px 0 20px;
+        width: 100%;
+        min-height: 60px;
+        max-height: 120px;
+        text-align: center;
+        background-color: var(--white);
+    }
+
+    .itensMenu {
+        flex-direction: row;
+        font-size: 16px;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .itensMenuBorder {
+        border-bottom: 0;
+    }
+
+}
+
+
+@media(max-width: 360px) {
+
+    .menuContainer {
+        width: 172px;
+        height: 230px;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+    }
+
+
+    .iconButton {
+        cursor: pointer;
+        border: 0;
+        padding-left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+}
