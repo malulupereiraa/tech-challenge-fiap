@@ -11,7 +11,6 @@ export const themed = {
     backgroundBase: '#E4EDE3',
     disabled: '#8B8B8B',
     error: '#BD0000',
-    background_gradient: 'linear-gradient(180deg, #004D61 0%, #FFFFFF 100%)'
   },
   themeFonts: {
     inter: 'Inter Variable',
@@ -26,13 +25,21 @@ export const themed = {
       fontWeight: '600',
       lineHeight: '19.36px',
       textAlign: 'center',
+    },
+    textHomeMain: {
+      fontFamily: 'Inter',
+      fontSize: '28px',
+      fontWeight: '600',
+      lineHeight: '33.89px',
+   
     }
+
   },
-  font_size: {
-    fontsizesmall: '14px',
+font_size: {
+  fontsizesmall: '14px',
     fontsizemedium: '16px',
-    fontsizelarge: '18px',
-    fontsizexlarge: '28px',
+      fontsizelarge: '18px',
+        fontsizexlarge: '28px',
   }
 
 };
