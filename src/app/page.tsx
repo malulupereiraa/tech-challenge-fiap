@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
         <Row className="pt-4">
 
           <Col xs={12} sm={4} md={4} className="mb-3 mb-md-0 text-center text-md-start">
-            <ul className="list-unstyled d-flex flex-column align-items-center align-items-md-start" style={{ color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>
+            <ul className="list-unstyled d-flex flex-column  align-items-md-start" style={{ color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>
               <li className="mb-2" style={{ ...themed.themeFonts.headerSemibold }}>Serviços</li>
               <li className="mb-1">Conta corrente</li>
               <li className="mb-1">Conta PJ</li>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
 
 
           <Col xs={12} sm={4} md={4} className="mb-3 mb-md-0 text-center text-md-start">
-            <ul className="list-unstyled d-flex flex-column align-items-center align-items-md-start" style={{ color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>
+            <ul className="list-unstyled d-flex flex-column  align-items-md-start" style={{ color: themed.themeColor.white, fontSize: themed.font_size.fontsizemedium }}>
               <li className="mb-2" style={{ ...themed.themeFonts.headerSemibold }}>Contato</li>
               <li className="mb-1">0800 004 250 08</li>
               <li className="mb-1">teste@gmail.com</li>
