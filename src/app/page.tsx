@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
                 width={29}
                 height={29}
                 priority
-                layout="intrinsic"
+                style={{ objectFit: 'contain' }} 
               />
               <Image
                 src="img_home/Whatsapp.svg"
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
                 width={29}
                 height={29}
                 priority
-                layout="intrinsic"
+                style={{ objectFit: 'contain' }} 
               />
               <Image
                 src="img_home/Youtube.svg"
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
                 width={29}
                 height={29}
                 priority
-                layout="intrinsic"
+                style={{ objectFit: 'contain' }} 
               />
             </div>
           </Col>
