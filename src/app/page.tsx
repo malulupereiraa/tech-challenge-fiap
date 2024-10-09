@@ -43,7 +43,7 @@ const Header: React.FC = () => {
 
             <Col xs={12} sm={12} md={5} lg={5} className="d-none d-md-flex justify-content-end gap-3">
               <Link href="/home">
-                <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"green"}  />
+                <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"green"} />
               </Link>
               <ButtonTCF size={'sm'} label={'Já Tenho Conta'} disabled={false} variant={"green-outline"} />
             </Col>
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                 width={29}
                 height={29}
                 priority
-                style={{ objectFit: 'contain' }} 
+                style={{ objectFit: 'contain' }}
               />
               <Image
                 src="img_home/Whatsapp.svg"
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
                 width={29}
                 height={29}
                 priority
-                style={{ objectFit: 'contain' }} 
+                style={{ objectFit: 'contain' }}
               />
               <Image
                 src="img_home/Youtube.svg"
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                 width={29}
                 height={29}
                 priority
-                style={{ objectFit: 'contain' }} 
+                style={{ objectFit: 'contain' }}
               />
             </div>
           </Col>
@@ -174,6 +174,14 @@ const Main: React.FC = () => {
                 alt="Logo do banco"
                 style={{ width: "100%", height: "100%" }}
               />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={12} className="d-flex align-items-center justify-content-center  d-md-none gap-3 mb-4">
+              <Link href="/home">
+                <ButtonTCF size={'sm'} label={'Abrir Minha Conta'} disabled={false} variant={"dark"} />
+              </Link>
+              <ButtonTCF size={'sm'} label={'Já Tenho Conta'} disabled={false} variant={"dark-outline"} />
             </Col>
           </Row>
           <Row>
@@ -286,9 +294,9 @@ export default function Home() {
 
   return (
     <Row style={{ overflowX: "hidden" }}>
-      <Header/>
-      <Main/>
-      <Footer/>
+      <Header />
+      <Main />
+      <Footer />
 
       <ModalTCF
         isOpen={isModalHomeOpen}
@@ -301,6 +309,6 @@ export default function Home() {
         onSubmitAction={handleCloseSubmit}
       />
     </Row>
-    
+
   )
 }
