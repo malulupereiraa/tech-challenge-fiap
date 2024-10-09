@@ -1,5 +1,4 @@
 'use client'
-
 import { themed } from "./@theme/themed";
 import Image from 'next/image';
 import Link from "next/link";
@@ -159,7 +158,7 @@ const Main: React.FC = () => {
               sm={12}
               md={5}
               lg={5}
-              className="d-flex align-items-center mb-3"
+              className="d-flex align-items-center mb-3 mt-5 mt-lg-0"
             >
               <h1 style={{ ...themed.themeFonts.textHomeMain }}>
                 Experimente mais liberdade no controle da sua vida
