@@ -1,21 +1,22 @@
 import styled from "styled-components";
-import { themed } from "../themed";
 
-export const ColorsLinks = styled.a`
-    &:active {
-        color:  ${(props) => props.theme.themeColor.secondary};
+export const ColorsLinks = styled.nav`
+ a {
+        color: ${(props) => props.theme.themeColor.dark};
+        text-decoration: none; /* Para remover sublinhado, se necessário */
+        
+        &:visited {
+            color: red; /* Cor do link visitado */
+        }
+
+        &:disabled {
+            color: ${(props) => props.theme.themeColor.secondary};
+            pointer-events: none; /* Desabilita a interação */
+        }
+
+        &:hover {
+            font-weight: 700;
+            color: ${(props) => props.theme.themeColor.secondary};
+        }
     }
-
-    &:visited {
-        color:  ${(props) => props.theme.themeColor.succes};
-    }
-
-    &:link {
-        color:  ${(props) => props.theme.themeColor.dark};
-    }
-
-    &:hover{
-    font-weight: 700;
-    color:  ${(props) => props.theme.themeColor.succes};
-}
 `;

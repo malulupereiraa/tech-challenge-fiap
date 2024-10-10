@@ -11,15 +11,13 @@ export default function AsideMenu() {
 
 
     return (
-        <div className={styleMenu.menuContainer} style={{ backgroundColor: themed.themeColor.grey, color: themed.themeColor.dark }} >
-            <nav className={styleMenu.itensMenu}>
-                
-            <ColorsLinks><Link href="/" className={styleMenu.itensMenuBorder}>Início</Link></ColorsLinks>
+        <div className={styleMenu.menuContainer} style={{ backgroundColor: themed.themeColor.white, color: themed.themeColor.dark }} >
+                <ColorsLinks className={styleMenu.itensMenu}>
+                    <Link href="/" className={styleMenu.itensMenuBorder}>Início</Link>
                     <Link href="/" className={styleMenu.itensMenuBorder}>Transferências</Link>
                     <Link href="/" className={styleMenu.itensMenuBorder} >Investimentos</Link>
                     <Link href="/">Outros serviços</Link>
-                
-            </nav>
+                </ColorsLinks>
         </div>
     )
 }
