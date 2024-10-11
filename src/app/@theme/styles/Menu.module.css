@@ -18,32 +18,7 @@
 .itensMenu a {
     text-decoration: none;
     padding: 15px 0;
-    /* color: var(--dark); */
 }
-
-/* .itensMenuBorder {
-    border-bottom: var(--dark);
-} */
-
-/* .itensMenu a:hover {
-    font-weight: 700;
-    color: var(--success);
-}
-
-.itensMenu a:link {
-    color: var(--dark);
-
-} */
-
-/* .itensMenu a:visited {
-    color: var(--success);
-    border-bottom: 1px solid var(--success);
-} */
-
-/* .itensMenu a:active {
-    color: var(--secondary);
-
-} */
 
 .itensMenu a {
     text-decoration: none;

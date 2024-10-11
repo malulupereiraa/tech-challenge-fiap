@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
-export const ColorsLinks = styled.nav`
+
+const StyledMenu = styled.nav`
  a {
         color: ${(props) => props.theme.themeColor.dark};
-        text-decoration: none; /* Para remover sublinhado, se necessário */
+        text-decoration: none; 
         
         &:visited {
-            color: red; /* Cor do link visitado */
+            color: ${(props) => props.theme.themeColor.success};
         }
 
-        &:disabled {
+        &:active {
             color: ${(props) => props.theme.themeColor.secondary};
-            pointer-events: none; /* Desabilita a interação */
         }
 
         &:hover {
@@ -19,4 +19,8 @@ export const ColorsLinks = styled.nav`
             color: ${(props) => props.theme.themeColor.secondary};
         }
     }
+
 `;
+
+export default StyledMenu;
+
