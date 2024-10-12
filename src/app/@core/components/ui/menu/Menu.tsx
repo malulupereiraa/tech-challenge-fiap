@@ -12,6 +12,7 @@ export default function Menu() {
 
     const { width } = useWindowSize();
 
+    
     const FixedMenu = () => {
         return (
             <>

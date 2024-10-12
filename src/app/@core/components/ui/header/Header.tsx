@@ -6,6 +6,7 @@ import styleHeader from '../../../../@theme/styles/Header.module.css';
 import useWindowSize from '../../hooks/WindowsSize';
 import MenuButton from '../menu/MenuButton';
 import StyledHeader from '@/app/@theme/custom/StyledHeader';
+import AsideMenu from '../menu/AsideMenu';
 
 interface TituloProps {
     nome: string;
@@ -19,7 +20,9 @@ export default function Header(props: TituloProps) {
             <>
                 {width <= 360 ? (
                     <MenuButton />
-                ) : (
+                ) : width <= 360 && <AsideMenu/> ? (
+                    <></>
+                ): (
                     <></>
                 )}
             </>
@@ -40,8 +43,7 @@ export default function Header(props: TituloProps) {
     }
 
     return (
-        <div className="row no-gutters">
-            <StyledHeader style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary }}>
+            <StyledHeader className="row no-gutters" style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary }}>
                 <div className={styleHeader.menuNameAvatarContainer}>
                     <IconHeader />
                     <div className={styleHeader.nameAvatarContainer}>
@@ -50,8 +52,7 @@ export default function Header(props: TituloProps) {
                     </div>
                 </div>
             </StyledHeader>
-        </div>
-    )
+      )
 }
 
 

@@ -85,7 +85,6 @@ const StyledMenu = styled.div`
         align-items: center;
         justify-content: center;
         padding-top: 0;
-
     }
     
     .openButton{
@@ -99,6 +98,13 @@ const StyledMenu = styled.div`
         padding-left: 15px;
         width: 40px;
         height: 40px;
+    }
+}
+    .iconCloseButton {
+        padding: 0;
+        width: 25px;
+        height: 25px;
+
     }
 }
 `;

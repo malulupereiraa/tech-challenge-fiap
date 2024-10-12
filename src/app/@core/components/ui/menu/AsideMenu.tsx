@@ -16,10 +16,9 @@ export default function AsideMenu() {
 
     return (
 
+
         <StyledMenu className="row no-gutters menuContainer">
-            
             <div className="menuContainer">
-            
                 <nav className=" itensMenu">
                     <Link href="/" className="itensMenuBorder">Início</Link>
                     <Link href="/" className=" itensMenuBorder">Transferências</Link>
@@ -27,7 +26,7 @@ export default function AsideMenu() {
                     <Link href="https://www.udemy.com/">Outros serviços</Link>
                 </nav>
                 <button
-                    className="iconButton" onClick={toggleMenu}><CloseIcon />{isOpen ? <AsideMenu /> : <></>}</button>
+                    className="iconMenuButton iconCloseButton" onClick={toggleMenu}><CloseIcon />{isOpen ? <AsideMenu /> : <></>}</button>
             </div>
 
         </StyledMenu>
