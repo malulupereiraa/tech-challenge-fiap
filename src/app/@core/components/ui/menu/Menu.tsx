@@ -4,10 +4,6 @@ import useWindowSize from '../../hooks/WindowsSize';
 import AsideMenu from './AsideMenu';
 
 
-
-
-
-
 export default function Menu() {
 
     const { width } = useWindowSize();

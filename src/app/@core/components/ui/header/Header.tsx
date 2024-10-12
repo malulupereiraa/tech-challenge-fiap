@@ -1,12 +1,12 @@
 'use client'
-import Image from 'next/image';
-import { themed } from '../../../../@theme/themed';
-import AvatarIcon from '../../icons/Avatar.svg';
-import styleHeader from '../../../../@theme/styles/Header.module.css';
-import useWindowSize from '../../hooks/WindowsSize';
-import MenuButton from '../menu/MenuButton';
 import StyledHeader from '@/app/@theme/custom/StyledHeader';
+import Image from 'next/image';
+import styleHeader from '../../../../@theme/styles/Header.module.css';
+import { themed } from '../../../../@theme/themed';
+import useWindowSize from '../../hooks/WindowsSize';
+import AvatarIcon from '../../icons/Avatar.svg';
 import AsideMenu from '../menu/AsideMenu';
+import MenuButton from '../menu/MenuButton';
 
 interface TituloProps {
     nome: string;
