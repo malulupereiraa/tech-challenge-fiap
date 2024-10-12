@@ -1,24 +1,37 @@
-import { themed } from '../../../../@theme/themed';
-import Link from "next/link";
-import styleMenu from '../../../../@theme/styles/Menu.module.css';
-import { useState } from "react";
-import useWindowSize from '../../hooks/WindowsSize';
-import CloseIcon from '@mui/icons-material/Close';
 import StyledMenu from '@/app/@theme/custom/StyledMenu';
+import Link from "next/link";
+import CloseIcon from '@mui/icons-material/Close';
+import { useState } from 'react';
+
 
 
 export default function AsideMenu() {
 
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <div className={styleMenu.menuContainer} style={{ backgroundColor: themed.themeColor.white, color: themed.themeColor.dark }} >
-                <StyledMenu className={styleMenu.itensMenu}>
-                    <Link href="/" className={styleMenu.itensMenuBorder} >Início</Link>
-                    <Link href="/" className={styleMenu.itensMenuBorder}>Transferências</Link>
-                    <Link href="/" className={styleMenu.itensMenuBorder} >Investimentos</Link>
+
+        <StyledMenu className="row no-gutters menuContainer">
+            
+            <div className="menuContainer">
+            
+                <nav className=" itensMenu">
+                    <Link href="/" className="itensMenuBorder">Início</Link>
+                    <Link href="/" className=" itensMenuBorder">Transferências</Link>
+                    <Link href="/" className=" itensMenuBorder">Investimentos</Link>
                     <Link href="https://www.udemy.com/">Outros serviços</Link>
-                </StyledMenu>
-        </div>
+                </nav>
+                <button
+                    className="iconButton" onClick={toggleMenu}><CloseIcon />{isOpen ? <AsideMenu /> : <></>}</button>
+            </div>
+
+        </StyledMenu>
+
     )
 }
 

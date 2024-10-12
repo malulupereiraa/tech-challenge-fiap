@@ -5,6 +5,7 @@ import AvatarIcon from '../../icons/Avatar.svg';
 import styleHeader from '../../../../@theme/styles/Header.module.css';
 import useWindowSize from '../../hooks/WindowsSize';
 import MenuButton from '../menu/MenuButton';
+import StyledHeader from '@/app/@theme/custom/StyledHeader';
 
 interface TituloProps {
     nome: string;
@@ -13,18 +14,18 @@ interface TituloProps {
 export default function Header(props: TituloProps) {
     const { width } = useWindowSize();
 
-    const IconDisplay = () => {
+    const IconHeader = () => {
         return (
             <>
                 {width <= 360 ? (
-                    <MenuButton/>
+                    <MenuButton />
                 ) : (
                     <></>
                 )}
             </>
         )
     }
-    const NameDisplay = () => {
+    const NameHeader = () => {
         return (
             <>
                 {width <= 360 ? (
@@ -32,21 +33,23 @@ export default function Header(props: TituloProps) {
                         <p></p>
                     </>
                 ) : (
-                    <><p id='client/name'>{props.nome}</p></>
+                    <><p id='clientName'>{props.nome}</p></>
                 )}
             </>
         )
     }
 
     return (
-        <div className={styleHeader.headerContainer} style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary }}>
-            <div className={styleHeader.menuNameAvatarContainer}>
-            <IconDisplay />
-                <div className={styleHeader.nameAvatarContainer}>
-                    <NameDisplay />
-                    <Image alt='avatar' src={AvatarIcon} className={styleHeader.avatarIcon} />
+        <div className="row no-gutters">
+            <StyledHeader style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary }}>
+                <div className={styleHeader.menuNameAvatarContainer}>
+                    <IconHeader />
+                    <div className={styleHeader.nameAvatarContainer}>
+                        <NameHeader />
+                        <Image alt='avatar' src={AvatarIcon} className={styleHeader.avatarIcon} />
+                    </div>
                 </div>
-            </div>
+            </StyledHeader>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 'use client'
 
+import StyledMenu from '@/app/@theme/custom/StyledMenu';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { useState } from "react";
 import { themed } from '../../../../@theme/themed';
 import AsideMenu from './AsideMenu';
-import styleMenu from '../../../../@theme/styles/Menu.module.css';
 
 
 
@@ -19,10 +19,9 @@ export default function MenuButton() {
 
     return (
 
-        <>
-            <button style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary }}
-                className={styleMenu.iconButton} onClick={toggleMenu}><MenuOutlinedIcon />{isOpen ? <AsideMenu /> : <></>}</button>
-        </>
+        <StyledMenu>
+            <button  className="iconMenuButton openButton" onClick={toggleMenu}><MenuOutlinedIcon />{isOpen ? <AsideMenu /> : <></>}</button>
+        </StyledMenu>
 
     )
 }

@@ -1,4 +1,9 @@
-.headerContainer{
+import styled from "styled-components";
+
+
+
+const StyledHeader = styled.div`
+ .headerContainer{
     width: 100%;
     max-width: 1920px;
     height: 96px;
@@ -29,9 +34,16 @@
     color: #fff;
 }
 
+#clientName{
+    margin: 0;
+}
+
+
 .avatarIcon{
     width: 40px;
     height: 40px;
 }
+`;
 
+export default StyledHeader;
 

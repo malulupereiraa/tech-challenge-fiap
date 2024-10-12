@@ -6,6 +6,8 @@ import AsideMenu from './AsideMenu';
 
 
 
+
+
 export default function Menu() {
 
     const { width } = useWindowSize();
@@ -15,14 +17,16 @@ export default function Menu() {
             <>
                 {width <= 360 ? (
                     <></>
-                ) : (<AsideMenu />)}
+                ) : (
+                    <AsideMenu />
+                )}
             </>
         )
     }
 
     return (
-        <>
-            <FixedMenu />
-        </>
+
+        <> <FixedMenu /></>
+
     )
 }
