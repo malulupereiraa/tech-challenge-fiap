@@ -24,11 +24,12 @@ const StyledMenu = styled.div`
 
     .menuContainer {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         width: 180px;
         height: 100vh;
         text-align: center;
-        padding: 5px 15px 0 15px;
+        padding: 5px 0px 0 15px;
+        margir: 0;
         background-color: ${(props) => props.theme.themeColor.white};
 
     }
@@ -91,6 +92,7 @@ const StyledMenu = styled.div`
             align-items: center;
             justify-content: center;
             padding-top: 0;
+            
             position: absolute;
             top: 0;
             left: 0;

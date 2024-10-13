@@ -1,12 +1,12 @@
 'use client'
-import StyledHeader from '@/app/@theme/custom/StyledHeader';
 import Image from 'next/image';
-import styleHeader from '../../../../@theme/styles/Header.module.css';
 import { themed } from '../../../../@theme/themed';
-import useWindowSize from '../../hooks/WindowsSize';
 import AvatarIcon from '../../icons/Avatar.svg';
-import AsideMenu from '../menu/AsideMenu';
+import styleHeader from '../../../../@theme/styles/Header.module.css';
+import useWindowSize from '../../hooks/WindowsSize';
 import MenuButton from '../menu/MenuButton';
+import StyledHeader from '@/app/@theme/custom/StyledHeader';
+import AsideMenu from '../menu/AsideMenu';
 
 interface TituloProps {
     nome: string;
@@ -43,12 +43,13 @@ export default function Header(props: TituloProps) {
     }
 
     return (
-            <StyledHeader className="row no-gutters" style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary }}>
-                <div className={styleHeader.menuNameAvatarContainer}>
+            // não consegui fazer funcionar o estilo no Styled Component Costumizado
+            <StyledHeader className="row no-gutters" style={{ backgroundColor: themed.themeColor.primary, color: themed.themeColor.secondary, display: 'flex', justifyContent: 'center' }}>
+                <div className="menuNameAvatarContainer">
                     <IconHeader />
-                    <div className={styleHeader.nameAvatarContainer}>
+                    <div className="nameAvatarContainer">
                         <NameHeader />
-                        <Image alt='avatar' src={AvatarIcon} className={styleHeader.avatarIcon} />
+                        <Image alt='avatar' src={AvatarIcon} className="avatarIcon" />
                     </div>
                 </div>
             </StyledHeader>

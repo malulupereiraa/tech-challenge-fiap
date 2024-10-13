@@ -1,31 +1,30 @@
 import styled from "styled-components";
-
-
+import { themed } from "../themed";
 
 const StyledHeader = styled.div`
- .headerContainer{
+
+//   .headerContainer {
+//     width: 100%;
+//     height: 96px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 20px;
+
+//   }
+
+  .menuNameAvatarContainer {
     width: 100%;
     max-width: 1920px;
-    height: 96px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-
-
-}
-
-.menuNameAvatarContainer{
-    width: 100%;
-    max-width: 1024px;
     height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
-}
+    
+  }
 
-.nameAvatarContainer{
+  .nameAvatarContainer {
     width: 300px;
     max-width: 1920px;
     height: 96px;
@@ -34,18 +33,16 @@ const StyledHeader = styled.div`
     align-items: center;
     padding: 0 20px;
     color: #fff;
-}
+  }
 
-#clientName{
+  #clientName {
     margin: 0;
-}
+  }
 
-
-.avatarIcon{
+  .avatarIcon {
     width: 40px;
     height: 40px;
-}
+  }
 `;
 
 export default StyledHeader;
-
