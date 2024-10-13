@@ -4,10 +4,11 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'; 
+import { SelectProps } from '@/app/@core/props/select';
 
 const SelectComponent = <T,>({
     options,
-    optinSelected,
+    optionSelected,
     labelKey,
     valueKey,
     onChange,
@@ -24,10 +25,10 @@ const SelectComponent = <T,>({
         width={width}
         height={height}
         IconComponent={ArrowDropDownIcon}
-        placeholder={optinSelected}  
+        placeholder={optionSelected}  
       >
-        <MenuItem value={optinSelected}>
-          {optinSelected}
+        <MenuItem value={optionSelected}>
+          {optionSelected}
         </MenuItem>
         {options.map((option, index) => (
           <MenuItem key={index} value={option[valueKey] as string}>
