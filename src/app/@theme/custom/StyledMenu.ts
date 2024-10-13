@@ -28,7 +28,7 @@ const StyledMenu = styled.div`
         width: 180px;
         height: 100vh;
         text-align: center;
-        padding: 5px 0px 0 15px;
+        padding: 5px;
         margir: 0;
         background-color: ${(props) => props.theme.themeColor.white};
 
@@ -36,6 +36,8 @@ const StyledMenu = styled.div`
 
     .itensMenu {
         display: flex;
+        width: 100%;
+        padding: 0 20px 0 20px;
         font-size: 16px;
         flex-direction: column;
     }
@@ -45,7 +47,10 @@ const StyledMenu = styled.div`
         text-decoration: none;
         padding: 10px 0;
         margin: 0 2%;
-
+    }
+   
+    .itensMenuBorder {
+        border-bottom: 1px solid ${(props) => props.theme.themeColor.dark};
     }
 
     .openButton{
@@ -81,9 +86,8 @@ const StyledMenu = styled.div`
 
     }
  @media(max-width: 360px) {
-
         .row {
-            position: relative; /* Contêiner pai deve ter position: relative */
+            position: relative;
         }
 
         .menuContainer {
@@ -92,7 +96,6 @@ const StyledMenu = styled.div`
             align-items: center;
             justify-content: center;
             padding-top: 0;
-            
             position: absolute;
             top: 0;
             left: 0;
