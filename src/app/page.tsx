@@ -8,12 +8,16 @@ import { ImPencil } from "react-icons/im";
 import { Col, Row } from "react-bootstrap";
 import CadastroForm from "./@core/components/forms/Cadastro";
 import CustomInput from "./@core/components/ui/input/Input";
-import {formatCurrency} from "../app/@core/utils/masks"
+import { formatCurrency } from "../app/@core/utils/masks"
+import SelectComponent from "./@core/components/ui/select/Select";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isModalHomeOpen, setIsModalHomeOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>(formatCurrency("000"));
+  const [valueSelect, setValueSelect] = useState<string>("Selecione o tipo de transação");
+  const [value2, setValue2] = useState<string>((""));
+  const [valueSelect2, setValueSelect2] = useState<string>("Escolha a opção desejada");
 
   const handleOpen = (type: string) => {
     switch (type) {
@@ -48,6 +52,27 @@ export default function Home() {
   const handleInputValue = (value: React.ChangeEvent<HTMLInputElement>) => {
     setValue(formatCurrency(value.target.value));
   };
+
+   const handleInputValue2 = (value: React.ChangeEvent<HTMLInputElement>) => {
+    setValue2(value.target.value);
+  };
+
+  interface Transacoes {
+    label: string;
+    value: string;
+  }
+
+  const optins: Transacoes[] = [
+    { label: 'Transferência', value: 'tef' },
+    { label: 'Saque', value: 'saque' },
+    { label: 'Pagamento', value: 'pagamento'},
+  ]
+
+  const optins2: Transacoes[] = [
+    { label: 'Extrato', value: 'tef' },
+    { label: 'Pix', value: 'saque' },
+    { label: 'Cartão de crédito', value: 'pagamento'},
+  ]
 
   return (
     <>
@@ -138,8 +163,19 @@ export default function Home() {
         onCloseAction={handleClose}
         onSubmitAction={handleCloseSubmit}
       />
-      <Col xs={6} sm={6} md={6} lg={6}>        
+      <Col xs={6} sm={6} md={6} lg={6} className="m-1">        
         <CustomInput type="currency" value={value} onChange={handleInputValue} width={"250px"}/>
+      </Col>
+      <Col xs={6} sm={6} md={6} lg={6} className="m-1">        
+        <CustomInput type="text" value={value2} onChange={handleInputValue2} width={"250px"} placeholder="Seu nome"/>
+      </Col>
+      <Col xs={6} sm={6} md={6} lg={6} className="m-1">        
+        <SelectComponent<Transacoes> options={optins} optionSelected="Selecione o tipo de transação" labelKey="label"
+          valueKey="value" onChange={(value) => setValueSelect(value)} value={valueSelect} width="355px" />
+      </Col>
+       <Col xs={6} sm={6} md={6} lg={6} className="m-1">        
+        <SelectComponent<Transacoes> options={optins2} optionSelected="Escolha a opção desejada" labelKey="label"
+          valueKey="value" onChange={(value) => setValueSelect2(value)} value={valueSelect2} width="355px" />
       </Col>
     </>
   );
