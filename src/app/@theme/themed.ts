@@ -31,15 +31,15 @@ export const themed = {
       fontSize: '28px',
       fontWeight: '600',
       lineHeight: '33.89px',
-   
+
     }
 
   },
-font_size: {
-  fontsizesmall: '14px',
+  font_size: {
+    fontsizesmall: '14px',
     fontsizemedium: '16px',
-      fontsizelarge: '18px',
-        fontsizexlarge: '28px',
+    fontsizelarge: '18px',
+    fontsizexlarge: '28px',
   }
 
 };
