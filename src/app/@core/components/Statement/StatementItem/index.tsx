@@ -8,9 +8,9 @@ export default ({
   amount,
   date
 }: Props) => {
-  const amountSignClassName = `statement-item-${amount > 0 ? 'positive' : 'negative'}-amount`;
-  const formattedAmount = amount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-  const translatedTransactionType = transactionType == 'deposit' ? 'Depósito' : 'Transferência';
+  const amountSignClassName = `statement-item-${amount > 0 ? "positive" : "negative"}-amount`;
+  const formattedAmount = amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+  const translatedTransactionType = transactionType == "deposit" ? "Depósito" : "Transferência";
 
   const formattedDate = () => {
     const utcDate = new Date(`${date}T00:00:00`);
@@ -21,7 +21,7 @@ export default ({
   };
 
   return (
-    <Container>
+    <Container className="statement-item">
       <Row>
         <Col>
           <h6 className="statement-item-title">

@@ -9,6 +9,10 @@ export default styled(Container)`
   margin: 0px;
   padding: 0px;
 
+  h6 {
+    margin: 0px;
+  }
+
   .row {
     margin: 0px;
     padding: 0px;
@@ -20,7 +24,7 @@ export default styled(Container)`
 
   .row .col:first-child {
     border-bottom: 1px solid #47A138;
-    padding-bottom: 6px;
+    padding-bottom: 15px;
   }
 
   .statement-item-title {
@@ -32,11 +36,11 @@ export default styled(Container)`
   }
 
   .statement-item-positive-amount {
-    color: #4575FF;
+    color: #457599;
   }
 
   .statement-item-negative-amount {
-    color: #FF7545;
+    color: #994527;
   }
 
   .statement-item-date {
