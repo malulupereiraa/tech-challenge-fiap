@@ -13,7 +13,24 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    month: {
+      control: "select",
+      options: [
+        "janeiro",
+        "fevereiro",
+        "março",
+        "abril",
+        "maio",
+        "junho",
+        "julho",
+        "agosto",
+        "setembro",
+        "novembro",
+        "dezembro"
+      ]
+    }
+  },
 } satisfies Meta<StatementSectionProps>;
 
 export default meta;
@@ -22,7 +39,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    month: "Março",
+    month: "março",
     items: [
       {
         transactionType: "deposit",
