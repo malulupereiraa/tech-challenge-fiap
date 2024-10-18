@@ -1,8 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import ButtonTCF from "../../ui/button/Button";
-import Link from "next/link";
-import { GrMenu } from "react-icons/gr";
-import { themed } from "@/app/@theme/themed";
 import { FooterStyler } from "./FooterContainer";
 
 export default function Footer() { 
