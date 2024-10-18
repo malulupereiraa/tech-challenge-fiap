@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 
 const meta: Meta<HeaderProps> = {
-  title: 'Components_TCF/Header',
+  title: 'Components_TCF/Home/Header',
   component: Header,
   parameters: {
     layout: 'centered',
@@ -12,6 +12,7 @@ const meta: Meta<HeaderProps> = {
       default: 'Dark',
     },
   },
+  tags: ['autodocs'],
   argTypes: {
     logoSrc: {
       description: 'Caminho da logo exibida no Header',

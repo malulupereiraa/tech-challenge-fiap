@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 
 
 const meta: Meta<MainProps> = {
-  title: 'Components_TCF/Main',
+  title: 'Components_TCF/Home/Main',
   component: Main,
   parameters: {
     layout: 'centered',
@@ -12,6 +12,7 @@ const meta: Meta<MainProps> = {
       default: 'Light',
     },
   },
+  tags: ['autodocs'],
   argTypes: {
     vantagens: {
       description: 'Lista de vantagens oferecidas pelo banco',

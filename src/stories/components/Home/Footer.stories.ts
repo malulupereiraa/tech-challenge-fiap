@@ -2,7 +2,7 @@ import Footer from '@/app/@core/components/Home/Footer';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<FooterProps> = {
-  title: 'Components_TCF/Footer',
+  title: 'Components_TCF/Home/Footer',
   component: Footer,
   parameters: {
     layout: 'centered',
@@ -11,6 +11,7 @@ const meta: Meta<FooterProps> = {
       default: 'Dark',
     },
   },
+  tags: ['autodocs'],
   argTypes: {
     services: {
       description: 'Lista de serviços exibidos no Footer',
