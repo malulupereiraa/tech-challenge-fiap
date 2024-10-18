@@ -7,7 +7,7 @@ export interface ButtonProps {
   label?: string;
   size?: "sm" | "lg" | undefined;
   /** If button is disabled: boolean */
-  disabled: boolean;
+  disabled?: boolean;
   rounded?: boolean;
   variant?: string;
   type?: "button" | "submit" | "reset" | undefined;

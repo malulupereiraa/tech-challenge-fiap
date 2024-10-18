@@ -15,11 +15,8 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     transactionType: {
-      control: 'radio',
-      options: ['deposit', 'transference']
-    },
-    date: {
-      control: 'text'
+      control: "radio",
+      options: ["deposit", "transference"]
     }
   },
 } satisfies Meta<StatementItemPros>;
@@ -30,8 +27,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    transactionType: 'deposit',
+    transactionType: "deposit",
     amount: 36.6,
-    date: '2024-09-06'
+    date: new Date("2024-09-06T00:00:00")
   },
 };

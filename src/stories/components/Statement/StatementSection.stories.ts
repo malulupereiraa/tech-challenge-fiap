@@ -43,17 +43,17 @@ export const Default: Story = {
     items: [
       {
         transactionType: "deposit",
-        date: "2024-01-01",
+        date: new Date("2024-01-01T00:00:00"),
         amount: 36.6
       },
       {
         transactionType: "deposit",
-        date: "2024-01-02",
+        date: new Date("2024-01-02T00:00:00"),
         amount: 48.3
       },
       {
         transactionType: "deposit",
-        date: "2024-01-03",
+        date: new Date("2024-01-03T00:00:00"),
         amount: 150
       }
     ]

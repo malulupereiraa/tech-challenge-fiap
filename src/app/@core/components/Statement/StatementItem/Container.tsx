@@ -35,14 +35,6 @@ export default styled(Container)`
     font-weight: 600;
   }
 
-  .statement-item-positive-amount {
-    color: #457599;
-  }
-
-  .statement-item-negative-amount {
-    color: #994527;
-  }
-
   .statement-item-date {
     color: #8B8B8B;
     text-align: right;

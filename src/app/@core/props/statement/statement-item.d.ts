@@ -8,5 +8,5 @@ export default interface StatementItemPropsProps {
   /** ??? */
   amount: number,
   /** ??? */
-  date: string
+  date: string | Date
 };
