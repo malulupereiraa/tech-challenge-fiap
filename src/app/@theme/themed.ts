@@ -27,5 +27,17 @@ export const themed = {
       lineHeight: "19.36px",
       textAlign: "center",
     },
+    textHomeMain: {
+      fontFamily: "Inter",
+      fontSize: "28px",
+      fontWeight: "600",
+      lineHeight: "33.89px",
+    },
+  },
+  font_size: {
+    fontsizesmall: "14px",
+    fontsizemedium: "16px",
+    fontsizelarge: "18px",
+    fontsizexlarge: "28px",
   },
 };
