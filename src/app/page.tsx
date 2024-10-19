@@ -1,24 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState } from "react";
-import ButtonTCF from "./@core/components/ui/button/Button";
-import ModalTCF from "./@core/components/ui/modal/Modal";
+import ButtonTCF from "./@core/components/ui/Button/Button";
+import ModalTCF from "./@core/components/ui/Modal/Modal";
 import { BsTrash3Fill } from "react-icons/bs";
 import { ImPencil } from "react-icons/im";
 import { Col, Row } from "react-bootstrap";
 import CadastroForm from "./@core/components/forms/Cadastro";
+import LoginForm from "./@core/components/forms/Login";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isModalHomeOpen, setIsModalHomeOpen] = useState<boolean>(false);
+  const [isModalLoginOpen, setIsModalLoginOpen] = useState<boolean>(false);
 
   const handleOpen = (type: string) => {
     switch (type) {
       case "delete":
         setIsModalOpen(true);
         break;
-      default:
+      case "home":
         setIsModalHomeOpen(true);
+        break;
+      default:
+        setIsModalLoginOpen(true);
     }
   };
 
@@ -27,8 +32,11 @@ export default function Home() {
       case "delete":
         setIsModalOpen(false);
         break;
-      default:
+      case "home":
         setIsModalHomeOpen(false);
+        break;
+      default:
+        setIsModalLoginOpen(false);
     }
   };
 
@@ -39,6 +47,11 @@ export default function Home() {
 
   const handleCadastroForm = (formData: any) => {
     // TODO: function Cadastro Form
+    console.log(formData);
+  };
+
+  const handleLoginForm = (formData: any) => {
+    // TODO: function Login Form
     console.log(formData);
   };
 
@@ -108,6 +121,13 @@ export default function Home() {
             variant={"base"}
             onClick={() => handleOpen("home")}
           />
+          <ButtonTCF
+            size={"sm"}
+            label={"Open Modal Login"}
+            disabled={false}
+            variant={"base"}
+            onClick={() => handleOpen("login")}
+          />
         </Col>
       </Row>
       <ModalTCF
@@ -124,6 +144,18 @@ export default function Home() {
       <ModalTCF
         isOpen={isModalHomeOpen}
         body={<CadastroForm onSubmitAction={handleCadastroForm} />}
+        title={' '}
+        hasFooter={false}
+        center={true}
+        sizeModal="md"
+        type={"fullheight"}
+        onCloseAction={handleClose}
+        onSubmitAction={handleCloseSubmit}
+      />
+      <ModalTCF
+        isOpen={isModalLoginOpen}
+        body={<LoginForm onSubmitAction={handleLoginForm} />}
+        title={' '}
         hasFooter={false}
         center={true}
         sizeModal="md"

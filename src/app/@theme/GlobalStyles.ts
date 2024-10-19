@@ -76,6 +76,9 @@ const GlobalStyles = createGlobalStyle`
   .modal-footer {
     border: none;
    }
+   .modal-content .btn-close {
+    font-size: 10px;
+   }
 
    body > div.fade.home-modal.modal.show > div {
     transform: none;

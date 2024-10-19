@@ -1,6 +1,6 @@
 import { StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import ModalTCF from "../../app/@core/components/ui/modal/Modal";
+import ModalTCF from "../../app/@core/components/ui/Modal/Modal";
 import { ModalProps } from "../../app/@core/props/modal";
 
 export default {

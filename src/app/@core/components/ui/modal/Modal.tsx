@@ -1,6 +1,6 @@
 import { Button, Modal } from "react-bootstrap";
 import { ModalProps } from "../../../props/modal";
-import ButtonTCF from "../button/Button";
+import ButtonTCF from "../Button/Button";
 
 const ModalTCF: React.FC<ModalProps> = ({
   isOpen,

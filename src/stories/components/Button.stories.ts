@@ -1,7 +1,7 @@
 import { StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { ButtonProps } from "../../app/@core/props/button";
-import ButtonTCF from "../../app/@core/components/ui/button/Button";
+import ButtonTCF from "../../app/@core/components/ui/Button/Button";
 import { BsTrash3Fill } from "react-icons/bs";
 import { ImPencil } from "react-icons/im";
 import React from "react";
