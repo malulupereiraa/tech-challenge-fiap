@@ -12,6 +12,7 @@ export default ({
       {
         items.map((transaction) => (
           <StatementItem
+            key={transaction.id}
             amount={transaction.amount}
             date={transaction.date}
             transactionType={transaction.transactionType}

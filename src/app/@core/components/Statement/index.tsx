@@ -7,7 +7,9 @@ import StatementItemProps from "../../props/statement/statement-item";
 import StatementSection from "./StatementSection";
 
 export default ({
-  transactions
+  transactions,
+  onEditionButtonClicked,
+  onRemovalButtonClicked
 }: Props) => {
   const transactionsByMonth = () => {
     const transactionsWithParsedDate =
@@ -36,11 +38,13 @@ export default ({
             size="sm"
             icon={<ImPencil />}
             rounded={true}
+            onClick={onEditionButtonClicked}
           />
           <Button
             size="sm"
             icon={<BsTrash3Fill />}
             rounded={true}
+            onClick={onRemovalButtonClicked}
           />
         </div>
       </header>
