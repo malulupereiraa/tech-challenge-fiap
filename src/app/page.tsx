@@ -14,7 +14,7 @@ export default function Home() {
 
     return (
       <>
-        <Header nome='Joana da Silva Oliveira'/>
+        <Header name='Joana da Silva Oliveira'/>
         <Menu/>
       </>  
     );

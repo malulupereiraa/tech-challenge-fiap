@@ -1,26 +1,17 @@
-    import styled from "styled-components";
-
+import styled from "styled-components";
 
 const StyledMenu = styled.div`
     a {
-            color: ${(props) => props.theme.themeColor.dark};
+            color: ${(props) => props.theme.themeColor.primary};
             text-decoration: none; 
-            
-            &:visited {
-                color: ${(props) => props.theme.themeColor.success};
-            }
-
-            &:active {
-                color: ${(props) => props.theme.themeColor.secondary};
-            }
-
+      
             &:hover {
                 font-weight: 700;
-                color: ${(props) => props.theme.themeColor.secondary};
-                border-bottom: 1px solid ${(props) => props.theme.themeColor.secondary};
+                color: ${(props) => props.theme.themeColor.primary};
+                border-bottom: 1px solid ${(props) =>
+                  props.theme.themeColor.primary};
             }
         }
-
 
     .menuContainer {
         display: flex;
@@ -31,6 +22,7 @@ const StyledMenu = styled.div`
         padding: 5px;
         margir: 0;
         background-color: ${(props) => props.theme.themeColor.white};
+        border-radius: 8px;
 
     }
 
@@ -40,6 +32,7 @@ const StyledMenu = styled.div`
         padding: 0 20px 0 20px;
         font-size: 16px;
         flex-direction: column;
+        font-weght: 400;
     }
 
 
@@ -47,12 +40,10 @@ const StyledMenu = styled.div`
         text-decoration: none;
         padding: 10px 0;
         margin: 0 2%;
+      
     }
    
-    .itensMenuBorder {
-        border-bottom: 1px solid ${(props) => props.theme.themeColor.dark};
-    }
-
+ 
     .openButton{
             background-color: ${(props) => props.theme.themeColor.primary};
             color: ${(props) => props.theme.themeColor.secondary};
@@ -68,7 +59,8 @@ const StyledMenu = styled.div`
             min-height: 60px;
             max-height: 120px;
             text-align: center;
-            background-color: ${(props) => props.theme.themeColor.backgroundBase};
+            background-color: ${(props) =>
+              props.theme.themeColor.backgroundBase};
         }
 
         .itensMenu {
@@ -80,11 +72,8 @@ const StyledMenu = styled.div`
 
         }
 
-        .itensMenuBorder {
-            border-bottom: 0;
-        }
-
     }
+
  @media(max-width: 360px) {
         .row {
             position: relative;
@@ -128,4 +117,3 @@ const StyledMenu = styled.div`
     `;
 
 export default StyledMenu;
-

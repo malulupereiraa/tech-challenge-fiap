@@ -3,15 +3,6 @@ import { themed } from "../themed";
 
 const StyledHeader = styled.div`
 
-//   .headerContainer {
-//     width: 100%;
-//     height: 96px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 20px;
-
-//   }
 
   .menuNameAvatarContainer {
     width: 100%;

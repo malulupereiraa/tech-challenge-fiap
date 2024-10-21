@@ -2,14 +2,13 @@
 import Image from 'next/image';
 import { themed } from '../../../../@theme/themed';
 import AvatarIcon from '../../icons/Avatar.svg';
-import styleHeader from '../../../../@theme/styles/Header.module.css';
 import useWindowSize from '../../hooks/WindowsSize';
 import MenuButton from '../menu/MenuButton';
 import StyledHeader from '@/app/@theme/custom/StyledHeader';
 import AsideMenu from '../menu/AsideMenu';
 
 interface TituloProps {
-    nome: string;
+    name: string;
 }
 
 export default function Header(props: TituloProps) {
@@ -20,8 +19,8 @@ export default function Header(props: TituloProps) {
             <>
                 {width <= 360 ? (
                     <MenuButton />
-                ) : width <= 360 && <AsideMenu/> ? (
-                    <></>
+                ) : width <= 360 && width <= 720 ? (
+                    <AsideMenu />
                 ): (
                     <></>
                 )}
@@ -36,7 +35,7 @@ export default function Header(props: TituloProps) {
                         <p></p>
                     </>
                 ) : (
-                    <><p id='clientName'>{props.nome}</p></>
+                    <><p id='clientName'>{props.name}</p></>
                 )}
             </>
         )
