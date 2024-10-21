@@ -16,16 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="pt-br">
-        <body className={`antialiased`}>
-          <Container fluid>
-            <AppRouterCacheProvider>
-              <StyledComponentsRegistry>
-                <StyledRoot>{children}</StyledRoot>
-              </StyledComponentsRegistry>
-            </AppRouterCacheProvider>
-          </Container>
-        </body>
-      </html>
+    <html lang="pt-br">
+      <body className={`antialiased`}>
+        <Container fluid>
+          <AppRouterCacheProvider>
+            <StyledComponentsRegistry>
+              <StyledRoot>{children}</StyledRoot>
+            </StyledComponentsRegistry>
+          </AppRouterCacheProvider>
+        </Container>
+      </body>
+    </html>
   );
 }
