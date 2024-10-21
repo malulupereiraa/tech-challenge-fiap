@@ -14,7 +14,11 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
+    items: {
+      description: "The transactions"
+    },
     month: {
+      description: "The section title",
       control: "select",
       options: [
         "janeiro",
@@ -42,16 +46,19 @@ export const Default: Story = {
     month: "março",
     items: [
       {
+        id: "abc123",
         transactionType: "deposit",
         date: new Date("2024-01-01T00:00:00"),
         amount: 36.6
       },
       {
+        id: "efg456",
         transactionType: "deposit",
         date: new Date("2024-01-02T00:00:00"),
         amount: 48.3
       },
       {
+        id: "hij789",
         transactionType: "deposit",
         date: new Date("2024-01-03T00:00:00"),
         amount: 150
