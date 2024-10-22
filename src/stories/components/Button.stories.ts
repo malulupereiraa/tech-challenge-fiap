@@ -113,3 +113,12 @@ export const DeleteRoundedIcon: Story = {
     rounded: true,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    size: "sm",
+    label: "Botão Inativo",
+    disabled: true,
+    variant: "base"
+  },
+};
