@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import CardTCF from "../@core/components/ui/Card/Card";
 import { useEffect, useRef, useState } from "react";
 import ToastTCF from "../@core/components/Toast";
-import TransacoesService from "../@core/services/transaction_service";
+import TransacoesService, { createTransaction, deleteTransaction, listTransactions, showTransaction, updateTransaction } from "../@core/services/transaction_service";
 import { GridColDef } from "@mui/x-data-grid";
 import BaseActions from "../@core/components/ui/Datatable/BaseActions";
 import DatatableTCF from "../@core/components/ui/Datatable/Datatable";
@@ -35,7 +35,7 @@ export default function Transacoes() {
   };
 
   const handleCloseDeleteSubmit = async () => {
-    await TransacoesService.delete(itemClickedCurrent.current).then(() => {
+    await deleteTransaction(itemClickedCurrent.current).then(() => {
       setShowToast(true);
       setMessage("Transação Removida com Sucesso");
       setIcon("success");
@@ -62,20 +62,23 @@ export default function Transacoes() {
       case "edit":
         setModalTitle("Editar Transação");
         setTypeTransaction(type);
-        await TransacoesService.getById(value).then((res: any) => {
+        await showTransaction(value).then((res: any) => {
+          console.log(res);
+          setDataToForm(res);
+          setIsModalTransacaoOpen(state);
+        });
+        break;
+      case "view":
+        setModalTitle("Visualizar Transação");
+        setTypeTransaction(type);
+        await showTransaction(value).then((res: any) => {
           console.log(res);
           setDataToForm(res);
           setIsModalTransacaoOpen(state);
         });
         break;
       default:
-        setModalTitle("Visualizar Transação");
-        setTypeTransaction(type);
-        await TransacoesService.getById(value).then((res: any) => {
-          console.log(res);
-          setDataToForm(res);
-          setIsModalTransacaoOpen(state);
-        });
+        setIsModalTransacaoOpen(state);
         break;
     }
   };
@@ -93,8 +96,8 @@ export default function Transacoes() {
     e.preventDefault();
     switch (typeTransaction) {
       case "add":
-        await TransacoesService.add(formData)
-          .then((res) => {
+        await createTransaction(formData)
+          .then((res: any) => {
             const transacoesToTable = res;
             console.log(res);
             setTransactions(transacoesToTable);
@@ -121,8 +124,8 @@ export default function Transacoes() {
         setIsModalTransacaoOpen(false);
         break;
       case "edit":
-        await TransacoesService.update(dataToForm.id, formData)
-          .then((res) => {
+        await updateTransaction(dataToForm.id, formData)
+          .then((res: any) => {
             const transacoesToTable = res;
             console.log(res);
             setTransactions(transacoesToTable);
@@ -157,8 +160,8 @@ export default function Transacoes() {
 
   const fetchTransactions = async () => {
     try {
-      await TransacoesService.getAll()
-        .then((res) => {
+      await listTransactions()
+        .then((res: any) => {
           const options: any = {
             weekday: "long",
             year: "numeric",
@@ -173,9 +176,13 @@ export default function Transacoes() {
               ...item,
               transaction:
                 item.transaction === "1"
-                  ? "Depósito"
+                  ? "TED"
                   : item.transaction === "2"
-                  ? "Transferência"
+                  ? "TEF"
+                  : item.transaction === "3"
+                  ? "PIX"
+                  : item.transaction === "4"
+                  ? "Débito"
                   : item.transaction,
               date: new Date(item.date).toLocaleDateString("pt-br", options),
             };
@@ -331,6 +338,7 @@ export function ListagemComponent(props: any) {
             isEdit={props.typeTransaction === "edit"}
             isView={props.typeTransaction === "view"}
             formValues={props.dataToForm}
+            showDatePicker={true}
             onSubmitAction={props.functionSubmit}
           />
         }

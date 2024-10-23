@@ -4,6 +4,8 @@
 import { Col, Form, Row } from "react-bootstrap";
 import { TransacaoFormProps } from "../../props/transacao-form";
 import ButtonTCF from "../ui/Button/Button";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import * as formik from "formik";
 import * as yup from "yup";
 import {
@@ -16,9 +18,11 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
   formValues,
   isEdit,
   isView,
+  showDatePicker,
   onSubmitAction,
 }) => {
   const { Formik } = formik;
+  const [startDate, setStartDate] = useState(new Date());
   const initialValue = useRef<any>({});
   const [loading, setLoading] = useState(true);
 
@@ -43,8 +47,8 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
           date: new Date(),
         }),
         setLoading(false))
-      : ((initialValue.current = formValues), setLoading(false));
-  }, [isView, isEdit]);
+      : ((initialValue.current = formValues), setStartDate(initialValue.current.date), setLoading(false));
+  }, [isView, isEdit, formValues]);
 
   return (
     <>
@@ -87,9 +91,10 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                         isValid={touched.transaction && !errors.transaction}
                       >
                         <option>Selecione o Tipo de Transação</option>
-                        <option value="1">Depósito</option>
-                        <option value="2">Transferência</option>
-                        <option value="3">Débito</option>
+                        <option value="1">TED</option>
+                        <option value="2">TEF</option>
+                        <option value="3">PIX</option>
+                        <option value="4">Débito</option>
                       </Form.Select>
                       {errors.transaction && touched.transaction ? (
                         <ErrorMessage>
@@ -119,6 +124,23 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                       ) : null}
                     </Form.Group>
                   </Col>
+                  {showDatePicker && (
+                    <Col xs={12} sm={12} md={12} lg={12}>
+                      <Form.Group
+                        className="mb-3"
+                        controlId="exampleForm.Datepicker"
+                      >
+                        <FormLabelStrong>Data</FormLabelStrong>
+                        <DatePicker name="date" selected={startDate} onChange={(date: any) => {
+                          setStartDate(date)
+                          values.date = date
+                        }} />
+                        {errors.date && touched.date ? (
+                          <ErrorMessage>{errors.date as string}</ErrorMessage>
+                        ) : null}
+                      </Form.Group>
+                    </Col>
+                  )}
                 </Row>
                 <Row className="mt-3 text-end">
                   <Col xs={12} sm={12} md={12} lg={12}>

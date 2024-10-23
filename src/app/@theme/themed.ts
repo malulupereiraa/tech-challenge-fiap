@@ -6,6 +6,7 @@ export const themed = {
     success: "#47A138",
     white: "#FFFFFF",
     grey: "#767676",
+    lightGrey: "#DEE2E6",
     darkGrey: "#CBCBCB",
     primary: "#004D61",
     secondary: "#FF5031",

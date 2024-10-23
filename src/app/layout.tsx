@@ -4,6 +4,8 @@ import StyledComponentsRegistry from "./@core/lib/registry";
 
 import { Container } from "react-bootstrap";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { Suspense } from "react";
+import LoadingSystem from "./@core/components/ui/Loading/Loading";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +23,11 @@ export default function RootLayout({
         <Container fluid>
           <AppRouterCacheProvider>
             <StyledComponentsRegistry>
-              <StyledRoot>{children}</StyledRoot>
+              <StyledRoot>
+                <Suspense fallback={<LoadingSystem />}>
+                  {children}
+                </Suspense>
+              </StyledRoot>
             </StyledComponentsRegistry>
           </AppRouterCacheProvider>
         </Container>
