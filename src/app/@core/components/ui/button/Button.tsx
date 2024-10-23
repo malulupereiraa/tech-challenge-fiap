@@ -26,7 +26,7 @@ const ButtonTCF: React.FC<ButtonProps> = ({
         type={type ? type : undefined}
         variant={variant ? variant : "primary"}
         size={size}
-        disabled={disabled}
+        disabled={disabled === true}
         className={buttonClassName()}
         onClick={onClick}
       >
