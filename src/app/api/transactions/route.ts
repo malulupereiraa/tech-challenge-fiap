@@ -1,14 +1,17 @@
-import { listTransactions, createTransaction } from '../../@core/services/transaction_service';
+import {
+  dbListTransactions,
+  dbCreateTransaction
+} from "../../@core/services/db_service";
 
-export const GET = async (request: Request) => {
-  const transactions = await listTransactions();
+export const GET = async (_request: Request) => {
+  const transactions = await dbListTransactions();
 
   return Response.json(transactions);
 }
 
 export const POST = async (request: Request) => {
   const data = await request.json();
-  const id = await createTransaction(data as object);
+  const id = await dbCreateTransaction(data as object);
 
   return new Response(JSON.stringify({ id }), {
     headers: { 'Content-Type': 'application/json' },

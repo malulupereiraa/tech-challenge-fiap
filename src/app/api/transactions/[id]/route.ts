@@ -1,23 +1,23 @@
 import type { Transaction } from "../../../@core/types/transaction";
 import {
-  showTransaction,
-  updateTransaction,
-  deleteTransaction,
-} from "../../../@core/services/transaction_service";
+  dbShowTransaction,
+  dbUpdateTransaction,
+  dbDeleteTransaction,
+} from "../../../@core/services/db_service";
 
 type Params = {
   id: string;
 };
 
 export const GET = async (request: Request, { params }: { params: Params }) => {
-  const transaction = await showTransaction(params.id);
+  const transaction = await dbShowTransaction(params.id);
 
   return handleTransactionResponse(transaction);
 };
 
 export const PUT = async (request: Request, { params }: { params: Params }) => {
   const transactionData = (await request.json()) as Transaction;
-  const transaction = await updateTransaction(params.id, transactionData);
+  const transaction = await dbUpdateTransaction(params.id, transactionData);
 
   return handleTransactionResponse(transaction);
 };
@@ -26,7 +26,7 @@ export const DELETE = async (
   request: Request,
   { params }: { params: Params }
 ) => {
-  const transaction = await deleteTransaction(params.id);
+  const transaction = await dbDeleteTransaction(params.id);
 
   return handleTransactionResponse(transaction);
 };
