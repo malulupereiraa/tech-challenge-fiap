@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Card } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import {
   CardContentCustom,
   CardContentBodyCustom,
+  CardTitleCustom,
 } from "../../../../@theme/custom/CardTCF";
 import { CardProps } from "../../../props/card";
 
-const CardTCF: React.FC<CardProps> = ({ title }) => {
+const CardTCF: React.FC<CardProps> = ({ title, body, footer }) => {
   return (
     <>
       <CardContentCustom>
@@ -22,13 +23,15 @@ const CardTCF: React.FC<CardProps> = ({ title }) => {
           alt="Border Bottom Left"
         />
         <CardContentBodyCustom>
-          <Card.Title>{title}</Card.Title>
-          This is some text within a card body. This is some text within a card
-          body. This is some text within a card body. This is some text within a
-          card body. This is some text within a card body. This is some text
-          within a card body. This is some text within a card body. This is some
-          text within a card body. This is some text within a card body. This is
-          some text within a card body.
+          <CardTitleCustom className="mb-4">{title}</CardTitleCustom>
+          {body !== undefined && body}
+          {footer !== undefined && (
+            <Row className="text-end">
+              <Col xs={12} sm={12} md={12} lg={12}>
+                {footer}
+              </Col>
+            </Row>
+          )}
         </CardContentBodyCustom>
       </CardContentCustom>
     </>

@@ -2,5 +2,7 @@
 
 export interface CardProps {
   title?: string;
+  body?: any;
+  footer?: any;
   onClick?: () => void | undefined;
 }

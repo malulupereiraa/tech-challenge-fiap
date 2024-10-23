@@ -10,4 +10,5 @@ export default interface ToastProps {
   /** The amount of time in milliseconds after which the toast will disappear */
   autohideDelay?: number,
   absolutePosition?: boolean
+  showToast?: boolean
 };

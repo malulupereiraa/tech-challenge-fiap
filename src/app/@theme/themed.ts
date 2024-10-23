@@ -12,6 +12,8 @@ export const themed = {
     backgroundBase: "#E4EDE3",
     disabled: "#8B8B8B",
     error: "#BD0000",
+    lightBlue: "#BDDCE3",
+    yellow: "#fff700",
   },
   themeFonts: {
     inter: "Inter Variable",

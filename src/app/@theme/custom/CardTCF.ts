@@ -24,3 +24,11 @@ export const CardContentCustom = styled(Card)`
 export const CardContentBodyCustom = styled(Card.Body)`
   z-index: 1;
 `;
+
+export const CardTitleCustom = styled(Card.Title)`
+  color: ${(props) => props.theme.themeColor.primary};
+  font-size: 25px;
+  line-height: 30.26px;
+  font-weight: 700;
+  padding-top: 0.5rem;
+`;

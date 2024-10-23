@@ -82,14 +82,15 @@ const GlobalStyles = createGlobalStyle`
 
    body > div.fade.home-modal.modal.show > div {
     transform: none;
-    height: 100%;
+    min-height: 100%;
     margin-top: 0;
     margin-bottom: 0;
     width: 100vw;
    }
    body > div.fade.home-modal.modal.show > div > div {
-    height: 100%;
+    min-height: 100%;
    }
+
   `;
 
 export default GlobalStyles;
