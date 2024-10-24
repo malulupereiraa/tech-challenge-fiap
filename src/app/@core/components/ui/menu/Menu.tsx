@@ -1,10 +1,13 @@
 'use client'
 
+import { usePathname } from 'next/navigation';
 import useWindowSize from '../../hooks/WindowsSize';
 import AsideMenu from './AsideMenu';
 
 
 export default function Menu() {
+
+    const pathname = usePathname();
 
     const { width } = useWindowSize();
 
@@ -15,7 +18,8 @@ export default function Menu() {
                 {width <= 360 ? (
                     <></>
                 ) : (
-                    <AsideMenu />
+                    <AsideMenu pathname={pathname}
+                    />
                 )}
             </>
         )

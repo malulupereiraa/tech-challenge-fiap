@@ -1,18 +1,17 @@
-import StyledMenu from "@/app/@theme/custom/StyledMenu";
+import StyledMenu from "../../../../@theme/custom/StyledMenu";
 import CloseIcon from "@mui/icons-material/Close";
 import Link, { LinkProps } from "next/link";
 import useWindowSize from "../../hooks/WindowsSize";
 import React, { useState } from "react";
-import { usePathname } from "next/navigation";
 import { styled } from "styled-components";
 
-export default function AsideMenu() {
+export default function AsideMenu({pathname}:{pathname: string}, {width}:{width: number}) {
   const StyledLink = styled(Link)`
-  @media (max-width: 360px), (min-width: 721px) {
-    &.itensMenuBorder {
-      border-bottom: 1px solid ${(props) => props.theme.themeColor.primary};
+    @media (max-width: 360px), (min-width: 721px) {
+      &.itensMenuBorder {
+        border-bottom: 1px solid ${(props) => props.theme.themeColor.primary};
+      }
     }
-}
     &.isActive {
       font-weight: 700;
       color: ${(props) => props.theme.themeColor.secondary};
@@ -20,13 +19,14 @@ export default function AsideMenu() {
     }
   `;
 
+
   type StLinkProps = LinkProps & {
     children: React.ReactNode;
+    pathname: string;
+    width: number;
   };
 
-  const StateLinkProps = ({ href, children, ...rest }: StLinkProps) => {
-    const pathname = usePathname();
-    console.log(pathname);
+  const StateLinkProps = ({ width, pathname, href, children, ...rest }: StLinkProps) => {
 
     const isActive = pathname === href.toString();
 
@@ -43,7 +43,7 @@ export default function AsideMenu() {
     );
   };
 
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
 
   const VisibleCloseButton = () => {
     return (
@@ -54,7 +54,7 @@ export default function AsideMenu() {
             onClick={toggleMenu}
           >
             <CloseIcon />
-            {isOpen ? <AsideMenu /> : <></>}
+            {isOpen ? <AsideMenu pathname={pathname} /> : <></>}
           </button>
         ) : (
           <></>
@@ -71,15 +71,15 @@ export default function AsideMenu() {
 
   return (
     <StyledMenu className="row no-gutters menuContainer">
-      <div className="no-gutters menuContainer">
-        <nav className=" itensMenu">
-          <VisibleCloseButton />
-          <StateLinkProps href="/" children="Início" />
-          <StateLinkProps href="/transferencias" children="Transferências" />
-          <StateLinkProps href="/investimentos" children="Investimentos" />
-          <StateLinkProps href="/outros" children="Outros serviços" />
-        </nav>
-      </div>
+        <div className="no-gutters menuContainer">
+          <nav className=" itensMenu">
+            <VisibleCloseButton />
+            <StateLinkProps pathname={pathname} width={width} href="/" children="Início" />
+            <StateLinkProps pathname={pathname} width={width} href="/transferencias" children="Transferências" />
+            <StateLinkProps pathname={pathname} width={width} href="/investimentos" children="Investimentos" />
+            <StateLinkProps pathname={pathname} width={width} href="/outros" children="Outros serviços" />
+          </nav>
+        </div>
     </StyledMenu>
   );
 }

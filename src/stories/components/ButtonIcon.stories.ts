@@ -1,4 +1,4 @@
-import { Meta, StoryObj} from '@storybook/react';
+import { StoryObj} from '@storybook/react';
 import MenuButton from '@/app/@core/components/ui/menu/MenuButton';
 import { ButtonIconProps } from '@/app/@core/props/button-icon';
 import { fn } from "@storybook/test";
