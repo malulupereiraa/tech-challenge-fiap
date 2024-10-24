@@ -62,6 +62,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
             {({
               handleSubmit,
               handleChange,
+              resetForm,
               values,
               touched,
               errors,
@@ -73,6 +74,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                   e.preventDefault();
                   handleSubmit();
                   onSubmitAction(e, values);
+                  resetForm();
                 }}
               >
                 <Row>

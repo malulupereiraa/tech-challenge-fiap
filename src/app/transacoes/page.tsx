@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import CardTCF from "../@core/components/ui/Card/Card";
 import { useEffect, useRef, useState } from "react";
 import ToastTCF from "../@core/components/Toast";
-import TransacoesService, { createTransaction, deleteTransaction, listTransactions, showTransaction, updateTransaction } from "../@core/services/transaction_service";
+import { createTransaction, deleteTransaction, listTransactions, showTransaction, updateTransaction } from "../@core/services/transaction_service";
 import { GridColDef } from "@mui/x-data-grid";
 import BaseActions from "../@core/components/ui/Datatable/BaseActions";
 import DatatableTCF from "../@core/components/ui/Datatable/Datatable";
@@ -29,6 +29,7 @@ export default function Transacoes() {
   const [icon, setIcon] = useState<any>("");
   const [toastTitle, setToastTitle] = useState<string>("");
   const [dataToForm, setDataToForm] = useState<any>();
+  
 
   const handleDeleteClose = () => {
     setIsModalOpen(false);
@@ -159,6 +160,7 @@ export default function Transacoes() {
   };
 
   const fetchTransactions = async () => {
+    
     try {
       await listTransactions()
         .then((res: any) => {

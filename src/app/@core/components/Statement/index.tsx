@@ -1,5 +1,5 @@
 import Container from "./Container";
-import Button from "@/app/@core/components/ui/button/Button";
+import Button from "@/app/@core/components/ui/Button/Button";
 import { ImPencil } from "react-icons/im";
 import { BsTrash3Fill } from "react-icons/bs";
 import Props from "@/app/@core/props/statement/statement";
@@ -22,7 +22,7 @@ export default ({
         });
       });
 
-    return Object.groupBy(transactionsWithParsedDate, (transaction) => {
+    return Object.groupBy(transactionsWithParsedDate, (transaction: { date: Date; }) => {
       return (transaction.date as Date).toLocaleDateString("pt-BR", {
         month: "long"
       })

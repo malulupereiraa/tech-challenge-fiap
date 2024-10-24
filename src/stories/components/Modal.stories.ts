@@ -1,7 +1,7 @@
 import { StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import ModalTCF from "../../app/@core/components/ui/Modal/Modal";
 import { ModalProps } from "../../app/@core/props/modal";
+import ModalTCF from "@/app/@core/components/ui/Modal/Modal";
 
 export default {
   title: "Components_TCF/Modal/Modal",
