@@ -14,26 +14,13 @@ export default {
   },
   tags: ["autodocs"],
 
-  argTypes: {
-    width: {
-      control:{
-        type: 'select',
-
-      },
-      options:['small', 'medium', 'large'],
-      description:
-        "Dimensions that determine the change of Header Component state",
-    },
-  },
 } as Meta;
 
 type Story = StoryObj<HeaderProps>;
 
-export const Mobile: Story =  {
+export const CurrentHeader: Story =  {
     args: {
-        name: '',
-        button: Object.keys(ButtonIcon),
-        size: 'small',
+        name: 'Joana da Silva Oliveira',
       },
     };
 

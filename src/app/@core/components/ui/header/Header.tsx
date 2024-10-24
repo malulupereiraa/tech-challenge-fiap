@@ -14,7 +14,6 @@ interface TituloProps {
 
 export default function Header(props: TituloProps) {
     const pathname = usePathname();
-
     const { width } = useWindowSize();
 
     const IconHeader = () => {

@@ -1,6 +1,4 @@
 import AsideMenu from "@/app/@core/components/ui/menu/AsideMenu";
-import Menu from "@/app/@core/components/ui/menu/Menu";
-import  MenuProps  from "@/app/@core/props/menu";
 import { StoryObj } from "@storybook/react";
 
 export default {
@@ -13,12 +11,12 @@ export default {
       pathname:{
         control:"select",
         description: "Current pathname",
-        options: ["/", "/transferencias","/investimentos", "/outros-serviços"]
+        options: ["/", "/transferencias","/investimentos", "/outros"]
       },
+   
     },
   }
 
-  type Story = StoryObj<MenuProps>;
+  type Story = StoryObj<typeof AsideMenu>;
 
-export const Default: Story =  {}
-    
+export const Default: Story =  {};
