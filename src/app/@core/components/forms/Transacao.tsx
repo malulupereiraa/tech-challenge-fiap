@@ -98,11 +98,11 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                         <option value="3">PIX</option>
                         <option value="4">Débito</option>
                       </Form.Select>
-                      {errors.transaction && touched.transaction ? (
+                      {errors.transaction && touched.transaction && (
                         <ErrorMessage>
                           {errors.transaction as string}
                         </ErrorMessage>
-                      ) : null}
+                      )}
                     </Form.Group>
                   </Col>
                   <Col xs={12} sm={12} md={12} lg={12}>
