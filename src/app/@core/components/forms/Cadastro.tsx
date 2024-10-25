@@ -57,7 +57,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmitAction }) => {
                   src="forms/IlustracaoCadastro.svg"
                   width={354.96}
                   height={261.6}
-                  alt="Ilutração Cadastro"
+                  alt="Ilustração Cadastro"
                 />
               </Col>
             </RowCentered>
