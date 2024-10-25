@@ -8,7 +8,6 @@ export const FormLabelStrong = styled(Form.Label)`
 `;
 
 export const FormCheckCustom = styled(Form.Check)`
-  /* font-weight: bold; */
   label {
     font-size: 13px;
   }
