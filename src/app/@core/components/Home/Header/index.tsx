@@ -28,7 +28,6 @@ export default function Header() {
   };
 
   const handleClose = (type: string) => {
-    console.log(type);
     switch (type) {
       case "fullheight":
         setIsModalCadastroOpen(false);
