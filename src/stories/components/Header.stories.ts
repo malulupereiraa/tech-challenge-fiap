@@ -1,8 +1,6 @@
 import Header from "@/app/@core/components/ui/header/Header";
 import { HeaderProps } from "../Header";
 import { Meta, StoryObj } from "@storybook/react";
-import { ButtonIcon } from "./ButtonIcon.stories";
-
 
 
 export default {

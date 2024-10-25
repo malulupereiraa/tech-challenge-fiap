@@ -1,11 +1,11 @@
 import StyledMenu from "../../../../@theme/custom/StyledMenu";
 import CloseIcon from "@mui/icons-material/Close";
 import Link, { LinkProps } from "next/link";
-import useWindowSize from "../../hooks/WindowsSize";
 import React, { useState } from "react";
 import { styled } from "styled-components";
+import useWindowSize from "../../hooks/WindowsSize";
 
-export default function AsideMenu({pathname}:{pathname: string}, {width}:{width: number}) {
+export default function AsideMenu({pathname}:{pathname: string}) {
   const StyledLink = styled(Link)`
     @media (max-width: 360px), (min-width: 721px) {
       &.itensMenuBorder {
@@ -23,10 +23,9 @@ export default function AsideMenu({pathname}:{pathname: string}, {width}:{width:
   type StLinkProps = LinkProps & {
     children: React.ReactNode;
     pathname: string;
-    width: number;
   };
 
-  const StateLinkProps = ({ width, pathname, href, children, ...rest }: StLinkProps) => {
+  const StateLinkProps = ({ pathname, href, children, ...rest }: StLinkProps) => {
 
     const isActive = pathname === href.toString();
 
@@ -43,7 +42,7 @@ export default function AsideMenu({pathname}:{pathname: string}, {width}:{width:
     );
   };
 
-  // const { width } = useWindowSize();
+  const { width } = useWindowSize();
 
   const VisibleCloseButton = () => {
     return (
