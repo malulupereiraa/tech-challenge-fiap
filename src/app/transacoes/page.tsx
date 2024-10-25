@@ -90,10 +90,6 @@ export default function Transacoes() {
   };
 
   const handleTransacaoForm = async (e: Event, formData: any) => {
-    // TODO: function Transacao Form
-    // console.log(e);
-    console.log(formData);
-    console.log(typeTransaction);
     e.preventDefault();
     switch (typeTransaction) {
       case "add":
