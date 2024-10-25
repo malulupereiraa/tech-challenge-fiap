@@ -121,9 +121,9 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                         isValid={touched.amount && !errors.amount}
                         disabled={isView}
                       />
-                      {errors.amount && touched.amount ? (
+                      {errors.amount && touched.amount && (
                         <ErrorMessage>{errors.amount as string}</ErrorMessage>
-                      ) : null}
+                      )}
                     </Form.Group>
                   </Col>
                   {showDatePicker && (
