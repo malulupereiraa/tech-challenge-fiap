@@ -12,12 +12,6 @@ const meta: Meta<any> = {
     },
   },
   tags: ["autodocs"],
-  //   argTypes: {
-  //     vantagens: {
-  //       description: 'Lista de vantagens oferecidas pelo banco',
-  //       control: { type: 'object' },
-  //     },
-  //   },
 };
 
 export default meta;
