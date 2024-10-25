@@ -100,7 +100,6 @@ export default function Transacoes() {
         await createTransaction(formData)
           .then((res: any) => {
             const transacoesToTable = res;
-            console.log(res);
             setTransactions(transacoesToTable);
             setShowToast(true);
             setMessage("Transação Realizada com Sucesso");
