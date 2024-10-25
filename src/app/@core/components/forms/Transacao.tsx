@@ -34,7 +34,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
       .number()
       .positive("Deve ser um valor positivo!")
       .required("Por favor, insira um valor!")
-      .min(1, "Olá! O valor tem que ser maior ou igual a 1!"),
+      .min(1, "O valor tem que ser maior ou igual a 1!"),
     date: yup.date().required(),
   });
 
