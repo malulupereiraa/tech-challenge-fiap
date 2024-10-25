@@ -137,9 +137,9 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                           setStartDate(date)
                           values.date = date
                         }} />
-                        {errors.date && touched.date ? (
+                        {errors.date && touched.date && (
                           <ErrorMessage>{errors.date as string}</ErrorMessage>
-                        ) : null}
+                        )}
                       </Form.Group>
                     </Col>
                   )}
