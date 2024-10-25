@@ -16,8 +16,6 @@ export default function Home() {
   
   const handleTransacaoForm = async (e: any, formData: any) => {
     // TODO: function Transacao Form
-    console.log(e);
-    console.log(formData);
     await createTransaction(formData)
     .then(() => {
       setShowToast(true);
