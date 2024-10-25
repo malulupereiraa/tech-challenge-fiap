@@ -2,7 +2,7 @@ import Footer from "@/app/@core/components/Home/Footer";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<FooterProps> = {
-  title: "Components_TCF/Home/Footer",
+  title: "Components_TCF/ErrorPage/Footer",
   component: Footer,
   parameters: {
     layout: "centered",

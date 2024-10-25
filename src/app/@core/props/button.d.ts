@@ -12,5 +12,5 @@ export interface ButtonProps {
   variant?: string;
   type?: "button" | "submit" | "reset" | undefined;
   /** Optional click handler */
-  onClick?: () => void | undefined;
+  onClick?: () => void | any;
 }
