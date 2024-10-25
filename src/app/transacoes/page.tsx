@@ -189,7 +189,6 @@ export default function Transacoes() {
               date: new Date(item.date).toLocaleDateString("pt-br", options),
             };
           });
-          console.log(transacoesToTable);
           setTransactions(transacoesToTable);
           setLoading(false);
         })
