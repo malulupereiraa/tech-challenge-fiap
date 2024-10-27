@@ -2,14 +2,7 @@ import styled from "styled-components";
 import { themed } from "../themed";
 
 const StyledHeader = styled.div`
-// .menu-container{
-//   background-color: ${(props) => props.theme.themeColor.primary};
-//   color: ${(props) => props.theme.themeColor.secondary};
-//   display: "Flex";
-//   justify-content: "center";
-
-// }
-  .menuNameAvatarContainer {
+ .menuNameAvatarContainer {
     width: 100%;
     max-width: 1920px;
     height: 100%;

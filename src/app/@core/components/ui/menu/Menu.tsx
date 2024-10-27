@@ -13,16 +13,7 @@ export default function Menu() {
 
     
     const FixedMenu = () => {
-        return (
-            <>
-                {width <= 360 ? (
-                    <></>
-                ) : (
-                    <AsideMenu pathname={pathname}
-                    />
-                )}
-            </>
-        )
+        return (width > 360 && <AsideMenu pathname={pathname} />)
     }
 
     return <FixedMenu />

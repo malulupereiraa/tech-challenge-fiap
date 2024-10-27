@@ -30,9 +30,7 @@ export default function AsideMenu({ pathname }: { pathname: string }) {
     return (
       <StyledLink
         href={href}
-        className={`${isActive ? "isActive" : ""} 
-        ${"itensMenuBorder"}
-        `}
+        className={`${isActive ? "isActive" : ""} ${"itensMenuBorder"}`}
         {...rest}
       >
         {children}
