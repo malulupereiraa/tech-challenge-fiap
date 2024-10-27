@@ -1,6 +1,6 @@
 import { Button, Modal } from "react-bootstrap";
 import { ModalProps } from "../../../props/modal";
-import ButtonTCF from "../button/Button";
+import ButtonTCF from "../Button/Button";
 
 const ModalTCF: React.FC<ModalProps> = ({
   isOpen,
@@ -25,9 +25,9 @@ const ModalTCF: React.FC<ModalProps> = ({
         }
       >
         {title && (
-            <Modal.Header closeButton>
-              <Modal.Title>{title}</Modal.Title>
-            </Modal.Header>
+          <Modal.Header closeButton>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
         )}
         <Modal.Body>{body}</Modal.Body>
         {hasFooter && (

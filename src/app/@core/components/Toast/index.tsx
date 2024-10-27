@@ -1,18 +1,22 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import BaseToast from "react-bootstrap/Toast";
 import BaseToastContainer from "react-bootstrap/ToastContainer";
 import ToastContainer from "./ToastContainer";
 import ToastIconWrapper from "./ToastIconWrapper";
-import ToastProps from "../../../props/toast";
+import ToastProps from "../../props/toast";
 
-export default ({
+
+const ToastTCF: React.FC<ToastProps> = ({
   icon = "info",
   message,
   title,
   autohideDelay,
   absolutePosition = true,
-}: ToastProps) => {
-  const [show, setShow] = useState(true);
+  showToast = false,
+}) => {
+  const [show, setShow] = useState(showToast);
   const autohideEnabled = autohideDelay ? true : false;
   const close = () => setShow(false);
 
@@ -37,6 +41,10 @@ export default ({
     </BaseToast>
   );
 
+  useEffect(() => {
+    setShow(showToast)
+  }, [showToast])
+
   return (
     <ToastContainer>
       {absolutePosition ? (
@@ -49,3 +57,4 @@ export default ({
     </ToastContainer>
   );
 };
+export default ToastTCF;

@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import CToast from "../../app/@core/components/ui/Toast";
+import ToastTCF from "../../app/@core/components/Toast";
 import ToastProps from "../../app/@core/props/toast";
 
 const meta = {
   title: "Components_TCF/Toast",
-  component: CToast,
+  component: ToastTCF,
   parameters: {
     layout: "centered",
     backgrounds: {
