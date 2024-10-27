@@ -1,5 +1,5 @@
 import Container from "./Container";
-import Button from "@/app/@core/components/ui/button/Button";
+import Button from "@/app/@core/components/ui/Button";
 import Props from "@/app/@core/props/statement/statement";
 import StatementItemProps from "../../props/statement/statement-item";
 import StatementSection from "./StatementSection";

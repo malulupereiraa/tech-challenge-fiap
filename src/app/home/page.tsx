@@ -2,7 +2,7 @@
 "use client";
 
 import { Row, Col } from "react-bootstrap";
-import CardTCF from "../@core/components/ui/Card/Card";
+import CardTCF from "../@core/components/ui/Card";
 import TransacaoForm from "../@core/components/forms/Transacao";
 import { createTransaction } from "../@core/services/transaction_service";
 import { useState } from "react";
@@ -13,7 +13,7 @@ export default function Home() {
   const [message, setMessage] = useState<string>("");
   const [icon, setIcon] = useState<any>("");
   const [toastTitle, setToastTitle] = useState<string>("");
-  
+
   const handleTransacaoForm = async (e: any, formData: any) => {
     // TODO: function Transacao Form
     await createTransaction(formData)

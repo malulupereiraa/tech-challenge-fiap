@@ -6,7 +6,7 @@ import { ContainerFHCustom } from "./@theme/custom/ContainerFH";
 import { RowCentered } from "./@theme/custom/RowCenter";
 import Header from "./@core/components/Home/Header";
 import Footer from "./@core/components/Home/Footer";
-import ButtonTCF from "./@core/components/ui/Button/Button";
+import ButtonTCF from "./@core/components/ui/Button";
 import { navigateToLoginPage } from "./actions";
 import { H1BoldError, H3BoldError } from "./@theme/custom/FormStyles";
 
