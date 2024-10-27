@@ -11,7 +11,16 @@ const StyledMenu = styled.div`
                 border-bottom: 1px solid ${(props) =>
                   props.theme.themeColor.primary};
             }
-        }
+            @media (max-width: 360px), (min-width: 721px) {
+                &.itensMenuBorder {
+                    border-bottom: 1px solid ${(props) => props.theme.themeColor.primary};
+                }
+                
+                &.itensMenuBorder:last-child {
+                    border-bottom: 0;
+                }
+            }
+   }
 
     .menuContainer {
         display: flex;
@@ -71,6 +80,8 @@ const StyledMenu = styled.div`
         }
 
     }
+
+
 
  @media(max-width: 360px) {
         .row {

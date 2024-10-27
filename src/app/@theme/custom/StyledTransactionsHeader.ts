@@ -2,8 +2,13 @@ import styled from "styled-components";
 import { themed } from "../themed";
 
 const StyledHeader = styled.div`
+// .menu-container{
+//   background-color: ${(props) => props.theme.themeColor.primary};
+//   color: ${(props) => props.theme.themeColor.secondary};
+//   display: "Flex";
+//   justify-content: "center";
 
-
+// }
   .menuNameAvatarContainer {
     width: 100%;
     max-width: 1920px;
@@ -12,7 +17,6 @@ const StyledHeader = styled.div`
     justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
-    
   }
 
   .nameAvatarContainer {
@@ -20,10 +24,11 @@ const StyledHeader = styled.div`
     max-width: 1920px;
     height: 96px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
     color: #fff;
+    gap: 25px;
   }
 
   #clientName {
