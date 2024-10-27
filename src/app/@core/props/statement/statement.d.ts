@@ -4,6 +4,5 @@ import StatementItemProps from "../../props/statement/statement-item";
 
 export default interface StatementItemPropsProps {
   transactions: StatementItemProps[],
-  onEditionButtonClicked?: () => void,
-  onRemovalButtonClicked?: () => void
+  loading: boolean
 };

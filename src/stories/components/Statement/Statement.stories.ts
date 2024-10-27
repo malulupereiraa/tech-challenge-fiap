@@ -7,7 +7,7 @@ const meta = {
   title: "Components_TCF/Statement/Statement",
   component: Statement,
   parameters: {
-    // layout: "centered",
+    layout: "centered",
     backgrounds: {
       values: [{ name: "Dark", value: "#EEEEEE" }],
       default: "Dark",
@@ -15,20 +15,11 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    onEditionButtonClicked: {
-      description: "The edit button action"
-    },
-    onRemovalButtonClicked: {
-      description: "The removal button action"
-    },
     transactions: {
       description: "The list of transactions",
     }
   },
-  args: {
-    onEditionButtonClicked: fn(),
-    onRemovalButtonClicked: fn()
-  }
+  args: {}
 } satisfies Meta<StatementProps>;
 
 export default meta;
@@ -37,6 +28,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    loading: false,
     transactions: [
       {
         id: "a1b2c3",
@@ -57,5 +49,12 @@ export const Default: Story = {
         amount: 42.9
       }
     ]
+  }
+};
+
+export const Loading: Story = {
+  args: {
+    loading: true,
+    transactions: []
   }
 };
