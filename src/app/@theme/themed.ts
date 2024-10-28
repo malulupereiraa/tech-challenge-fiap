@@ -7,6 +7,7 @@ export const themed = {
     white: "#FFFFFF",
     grey: "#767676",
     lightGrey: "#DEE2E6",
+    disabledGrey: "#E9ECEF",
     darkGrey: "#CBCBCB",
     primary: "#004D61",
     secondary: "#FF5031",

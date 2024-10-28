@@ -9,7 +9,10 @@ import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Bytebank",
-  description: "Tech Challenge",
+  description: "Tech Challenge FIAP",
+  icons: {
+    icon: "icon.svg",
+  },
 };
 
 export const dynamic = "force-dynamic";
