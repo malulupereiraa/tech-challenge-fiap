@@ -133,7 +133,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                         controlId="exampleForm.Datepicker"
                       >
                         <FormLabelStrong>Data</FormLabelStrong>
-                        <DatePicker name="date" selected={startDate} onChange={(date: any) => {
+                        <DatePicker name="date" selected={startDate} disabled={isView} onChange={(date: any) => {
                           setStartDate(date)
                           values.date = date
                         }} />
