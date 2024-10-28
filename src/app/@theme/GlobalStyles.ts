@@ -102,7 +102,6 @@ const GlobalStyles = createGlobalStyle`
       font-weight: 400;
       line-height: 1.5;
       appearance: none;
-      // background-color: ${(props) => props.theme.themeColor.white};
       background-clip: padding-box;
       border: 1px solid ${(props) => props.theme.themeColor.lightGrey};
       border-radius: 0.375rem;
