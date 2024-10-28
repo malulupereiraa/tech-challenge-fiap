@@ -26,4 +26,8 @@ export default styled.section`
       }
     }
   }
+
+  .section-placeholder .section-item-placeholder:first-child {
+    margin-bottom: 21px;
+  }
 `;
