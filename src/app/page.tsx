@@ -8,14 +8,10 @@ import Menu from "./@core/components/ui/menu/Menu";
 
 export default function Home() {
   return (
-    // <Row style={{ overflowX: "hidden" }}>
-    //   <Header />
-    //   <Main />
-    //   <Footer />
-    // </Row>
-    <>
-      <TransactionsHeader name="Joana" />
-      <Menu />
-    </>
+    <Row style={{ overflowX: "hidden" }}>
+      <Header />
+      <Main />
+      <Footer />
+    </Row>
   );
 }
