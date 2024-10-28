@@ -1,7 +1,11 @@
 import styled from "styled-components";
-import { themed } from "../themed";
 
 const StyledHeader = styled.div`
+background-color: ${(props) => props.theme.themeColor.primary};
+color: themed.themeColor.secondary;
+display: "flex";
+justifyContent: "center";
+
  .menuNameAvatarContainer {
     width: 100%;
     max-width: 1920px;
@@ -33,5 +37,4 @@ const StyledHeader = styled.div`
     height: 40px;
   }
 `;
-
 export default StyledHeader;

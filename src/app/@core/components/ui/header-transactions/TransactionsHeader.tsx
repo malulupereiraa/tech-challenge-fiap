@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
-import { themed } from "../../../../@theme/themed";
 import AvatarIcon from "../../icons/Avatar.svg";
 import useWindowSize from "../../hooks/WindowsSize";
 import MenuButton from "../menu/MenuButton";
 import StyledHeader from "@/app/@theme/custom/StyledTransactionsHeader";
-import AsideMenu from "../menu/AsideMenu";
 import { usePathname } from "next/navigation";
 
 interface TituloProps {
@@ -28,14 +26,7 @@ export default function TransactionsHeader(props: TituloProps) {
   return (
     // não consegui fazer funcionar o estilo no Styled Component Costumizado
     <StyledHeader
-      className="row no-gutters menu-container"
-      style={{
-        backgroundColor: themed.themeColor.primary,
-        color: themed.themeColor.secondary,
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+      className="row no-gutters">
       <div className="menuNameAvatarContainer">
         <IconHeader />
         <div className="nameAvatarContainer">
