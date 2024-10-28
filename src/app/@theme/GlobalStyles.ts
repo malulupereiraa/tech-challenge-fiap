@@ -108,8 +108,6 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 0.375rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     }
-   }
-
   `;
 
 export default GlobalStyles;
