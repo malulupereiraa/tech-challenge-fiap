@@ -24,7 +24,6 @@ export default function TransactionsHeader(props: TituloProps) {
   };
 
   return (
-    // não consegui fazer funcionar o estilo no Styled Component Costumizado
     <StyledHeader
       className="row no-gutters">
       <div className="menuNameAvatarContainer">
