@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 const StyledMenu = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: ${(props) => props.theme.themeColor.white};
+
+
+ 
     a {
             color: ${(props) => props.theme.themeColor.primary};
             text-decoration: none; 
@@ -13,7 +20,8 @@ const StyledMenu = styled.div`
             }
             @media (max-width: 360px), (min-width: 721px) {
                 &.itensMenuBorder {
-                    border-bottom: 1px solid ${(props) => props.theme.themeColor.primary};
+                    border-bottom: 1px solid ${(props) =>
+                      props.theme.themeColor.primary};
                 }
                 
                 &.itensMenuBorder:last-child {
@@ -30,7 +38,7 @@ const StyledMenu = styled.div`
         text-align: center;
         padding: 5px;
         margin: 0;
-        background-color: ${(props) => props.theme.themeColor.white};
+        
         border-radius: 8px;
 
     }
@@ -59,6 +67,8 @@ const StyledMenu = styled.div`
         }
 
  @media (min-width: 361px) and (max-width: 720px) {
+    width: 100%;
+
         .menuContainer {
             align-items: center;
             padding: 5px 20px 0 20px;

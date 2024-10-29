@@ -63,24 +63,19 @@ export default function AsideMenu({ pathname }: { pathname: string }) {
   };
 
   return (
-    <StyledMenu className="row no-gutters menuContainer">
+    <StyledMenu className="row no-gutters">
       <div className="no-gutters menuContainer">
         <nav className=" itensMenu">
           <VisibleCloseButton />
-          <StateLinkProps pathname={pathname} href="/" children="Início" />
+          <StateLinkProps pathname={pathname} href="/home" children="Início" />
           <StateLinkProps
-            pathname={pathname}
-            href="/transferencias"
-            children="Transferências"
+            pathname={pathname} href="/transferencias" children="Transferências"
           />
           <StateLinkProps
-            pathname={pathname}
-            href="/investimentos"
-            children="Investimentos"
+            pathname={pathname} href="/investimentos" children="Investimentos"
           />
           <StateLinkProps
-            pathname={pathname}
-            href="/outros"
+            pathname={pathname} href="/outros" 
             children="Outros serviços"
           />
         </nav>
