@@ -128,7 +128,7 @@ export const ValueBalance = styled.p`
 `;
 
 export const ButtonIcon = styled.button`
-  background: 'none';
-  border: 'none';
-  cursor: 'pointer';
+  background: none;
+  border: none;
+  cursor: pointer;
 `
