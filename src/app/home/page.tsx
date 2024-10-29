@@ -44,7 +44,10 @@ export default function Home() {
       <Row>
         <Col xs={12} sm={12} md={12} lg={12}>
           <CardSaldoComponent
-            name="Cibele" balance={5000} showBalance={false} />
+            name="Cibele"
+            balance={5000}
+            showBalance={false}
+          />
         </Col>
       </Row>
       <ToastTCF
