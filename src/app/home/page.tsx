@@ -7,6 +7,7 @@ import TransacaoForm from "../@core/components/forms/Transacao";
 import { createTransaction } from "../@core/services/transaction_service";
 import { useState } from "react";
 import ToastTCF from "../@core/components/Toast";
+import CardSaldoComponent from "../@core/components/ui/CardSaldo/CardSaldo";
 
 export default function Home() {
   const [valueToast, setShowToast] = useState<boolean>(false);
@@ -40,6 +41,12 @@ export default function Home() {
 
   return (
     <>
+      <Row>
+        <Col xs={12} sm={12} md={12} lg={12}>
+          <CardSaldoComponent
+            name="Cibele" balance={5000} showBalance={false} />
+        </Col>
+      </Row>
       <ToastTCF
       icon={icon}
       message={message}
