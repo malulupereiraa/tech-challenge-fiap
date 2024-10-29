@@ -4,7 +4,8 @@ import { CardSaldoProps } from "../../../../@core/props/cardSaldo";
 import {
   BalanceRow, CardSaldo, ContentBalanceContainer, ContentContainer,
   DateInfoCard, TitleBalance, TitleCard, DividerBalance, SubTitleBalance,
-  ValueBalance
+  ValueBalance,
+  ButtonIcon
 } from "../../../../@theme/custom/CardSaldo";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
@@ -42,9 +43,9 @@ const CardSaldoComponent: React.FC<CardSaldoProps> = ({ name, balance, showBalan
       <ContentBalanceContainer>
         <BalanceRow>            
           <TitleBalance>Saldo</TitleBalance>
-          <button onClick={toggleBalanceVisibility} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+          <ButtonIcon onClick={toggleBalanceVisibility}>
             {isBalanceVisible ? <FaEye /> : <FaEyeSlash />}
-          </button>
+          </ButtonIcon>
         </BalanceRow>
         <DividerBalance />
         
