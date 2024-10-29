@@ -31,7 +31,7 @@ export const CardSaldo = styled.div`
 `;
 
 export const TitleCard = styled.h2`
-  font-size: ${(props) => props.theme.font_size.fontsizmdlarge};
+  font-size: ${(props) => props.theme.font_size.fontsizemdlarge};
   font-weight: 600;
   color: ${(props) => props.theme.themeColor.white};
   font-family: ${({ theme }) => theme.themeFonts.fontFamily};
@@ -123,8 +123,12 @@ export const SubTitleBalance = styled.p`
 
 export const ValueBalance = styled.p`
   font-family: ${({ theme }) => theme.themeFonts.fontFamily};
-  font-size: ${(props) => props.theme.font_size.fontsizmdlarge};
+  font-size: ${(props) => props.theme.font_size.fontsizemdlarge};
   color: ${(props) => props.theme.themeColor.white};
 `;
 
-
+export const ButtonIcon = styled.button`
+  background: 'none';
+  border: 'none';
+  cursor: 'pointer';
+`
