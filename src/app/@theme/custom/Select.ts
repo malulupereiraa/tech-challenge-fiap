@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
-import { themed } from '../../../../@theme/themed';
 import Select from '@mui/material/Select';
+import { themed } from '../themed';
 
 interface CustomStyleSelectProps {
-  width?: string | number | undefined;
-  height?: string | number | undefined;
+    width?: string | number | undefined;
+    height?: string | number | undefined;
 }
 
-export const SelectComponent = styled(Select) <CustomStyleSelectProps>`
+export const SelectComponentStyle = styled(Select) <CustomStyleSelectProps>`
   ${({ width, height }) => css`
     width: ${width || '100%'};
     height: ${height || '48px'};
@@ -15,7 +15,7 @@ export const SelectComponent = styled(Select) <CustomStyleSelectProps>`
     border: 1px solid ${themed.themeColor.primary};
     border-radius: 8px !important;
     text-align: left;
-    color: ${themed.themeColor.grey_text} !important;
+    color: ${themed.themeColor.grey} !important;
 
     &:focus {
       border: 1px solid ${themed.themeColor.primary}; /* Mantém a mesma cor de borda em foco */

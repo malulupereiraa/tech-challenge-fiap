@@ -1,10 +1,10 @@
 
-import * as S from './style';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'; 
 import { SelectProps } from '@/app/@core/props/select';
+import { SelectComponentStyle } from '../../../../@theme/custom/Select';
 
 const SelectComponent = <T,>({
     options,
@@ -19,7 +19,7 @@ const SelectComponent = <T,>({
 
   return (      
     <FormControl fullWidth>
-      <S.SelectComponent
+      <SelectComponentStyle
         value={value as string} 
         onChange={(e) => onChange(e.target.value as T[keyof T])}
         width={width}
@@ -36,7 +36,7 @@ const SelectComponent = <T,>({
           </MenuItem>
         ))}       
         
-      </S.SelectComponent>
+      </SelectComponentStyle>
     </FormControl>
   );
 };
