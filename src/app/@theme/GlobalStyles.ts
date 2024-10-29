@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import "../../app/globals.css";
 
 const GlobalStyles = createGlobalStyle`
+
   body {
     background: ${(props) => props.theme.themeColor.backgroundBase};
     font-family: ${(props) => props.theme.themeFonts.inter};
@@ -97,15 +98,18 @@ const GlobalStyles = createGlobalStyle`
     input {
       width: 100%;
       padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    appearance: none;
-    background-color: ${(props) => props.theme.themeColor.white};
-    background-clip: padding-box;
-    border: 1px solid ${(props) => props.theme.themeColor.lightGrey};
-    border-radius: 0.375rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      appearance: none;
+      background-clip: padding-box;
+      border: 1px solid ${(props) => props.theme.themeColor.lightGrey};
+      border-radius: 0.375rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    input:disabled {
+      background-color: ${(props) => props.theme.themeColor.disabledGrey};
     }
    }
 
