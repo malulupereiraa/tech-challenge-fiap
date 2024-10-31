@@ -42,6 +42,7 @@ export const themed = {
     fontsizesmall: "14px",
     fontsizemedium: "16px",
     fontsizelarge: "18px",
+    fontsizemdlarge: "25px",
     fontsizexlarge: "28px",
   },
 };
