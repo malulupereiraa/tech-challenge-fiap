@@ -3,7 +3,7 @@
 "use client";
 import { Col, Form, Row } from "react-bootstrap";
 import { TransacaoFormProps } from "../../props/transacao-form";
-import ButtonTCF from "../ui/Button/Button";
+import ButtonTCF from "../ui/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as formik from "formik";
@@ -73,7 +73,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                 onSubmit={(e) => {
                   e.preventDefault();
                   handleSubmit();
-                  onSubmitAction(e, values);
+                  onSubmitAction && onSubmitAction(e, values);
                   resetForm();
                 }}
               >
