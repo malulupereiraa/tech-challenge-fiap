@@ -16,6 +16,10 @@ const meta = {
   argTypes: {
     title: { description: "An optional title" },
     message: { description: "The toast's message" },
+    showToast: {
+      description: "Determines if the toast should be displayed.",
+      control: "boolean"
+    },
     autohideDelay: {
       control: {
         type: "number",
@@ -46,6 +50,7 @@ export const Success: Story = {
     message: "Transação XPTO concluída!",
     icon: "success",
     absolutePosition: false,
+    showToast: true
   },
 };
 
@@ -54,6 +59,7 @@ export const Error: Story = {
     title: "Vixe!",
     message: "Parece que deu ruim!",
     icon: "error",
+    showToast: true
   },
 };
 
@@ -62,6 +68,7 @@ export const Warning: Story = {
     title: "Cuidado!",
     message: "Algo de errado não parece certo!",
     icon: "warning",
+    showToast: true
   },
 };
 
@@ -70,11 +77,13 @@ export const Info: Story = {
     title: "Dica do dia",
     message: "Abacate faz bem pro cabelo!",
     icon: "info",
+    showToast: true
   },
 };
 
 export const NoTitle: Story = {
   args: {
     message: "Esse é um toast sem título",
+    showToast: true
   },
 };

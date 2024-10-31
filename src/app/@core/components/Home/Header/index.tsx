@@ -5,11 +5,11 @@ import { HeaderStyler } from "./HeaderContainer";
 import Image from "next/image";
 import { GrMenu } from "react-icons/gr";
 import { themed } from "@/app/@theme/themed";
-import ModalTCF from "../../ui/Modal/Modal";
+import ModalTCF from "../../ui/Modal";
 import CadastroForm from "../../forms/Cadastro";
 import { useState } from "react";
 import LoginForm from "../../forms/Login";
-import ButtonTCF from "../../ui/Button/Button";
+import ButtonTCF from "../../ui/Button";
 import { navigate } from "../../../../actions";
 
 export default function Header() {

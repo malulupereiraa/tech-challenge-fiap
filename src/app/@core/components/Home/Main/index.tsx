@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Link from "next/link";
 import { BackgroundHome } from "./MainContainer";
 import Image from "next/image";
-import ButtonTCF from "../../ui/Button/Button";
+import ButtonTCF from "../../ui/Button";
 import { H1Bold, H3Bold } from "../../../../@theme/custom/FormStyles";
 
 export default function Main() {

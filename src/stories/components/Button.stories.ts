@@ -4,7 +4,7 @@ import { ButtonProps } from "../../app/@core/props/button";
 import { BsTrash3Fill } from "react-icons/bs";
 import { ImPencil } from "react-icons/im";
 import React from "react";
-import ButtonTCF from "@/app/@core/components/ui/Button/Button";
+import ButtonTCF from "@/app/@core/components/ui/Button";
 
 export default {
   title: "Components_TCF/Button/Button",

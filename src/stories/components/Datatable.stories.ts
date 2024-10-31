@@ -1,4 +1,4 @@
-import Datatable from "@/app/@core/components/ui/Datatable/Datatable";
+import Datatable from "@/app/@core/components/ui/Datatable";
 import { DatatableProps } from "@/app/@core/props/datatable";
 import { StoryObj } from "@storybook/react";
 
