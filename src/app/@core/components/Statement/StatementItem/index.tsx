@@ -11,8 +11,6 @@ export default ({
   const formattedAmount = amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
   const translatedTransactionType = transactionType == "deposit" ? "Depósito" : "Transferência";
 
-  console.log(date);
-
   const formattedDate = () => {
     const parsedDate = typeof (date) === 'number' ? (new Date(date)) : date as Date;
     const day = `00${parsedDate.getDate().toString()}`.slice(-2);
