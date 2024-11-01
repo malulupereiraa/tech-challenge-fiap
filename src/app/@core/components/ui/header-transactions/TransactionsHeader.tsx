@@ -27,11 +27,11 @@ export default function TransactionsHeader(props: TituloProps) {
     <StyledHeader
       className="row no-gutters">
       <div className="menuNameAvatarContainer">
-        <IconHeader />
-        <div className="nameAvatarContainer">
-          <NameHeader />
-          <Image alt="avatar" src={AvatarIcon} className="avatarIcon" />
-        </div>
+          <IconHeader />
+          <div className="nameAvatarContainer">
+            <NameHeader />
+            <Image alt="avatar" src={AvatarIcon} className="avatarIcon" />
+          </div>
       </div>
     </StyledHeader>
   );

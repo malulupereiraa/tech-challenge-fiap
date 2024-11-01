@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
-background-color: ${(props) => props.theme.themeColor.primary};
-color: themed.themeColor.secondary;
-display: "flex";
-justifyContent: "center";
+  background-color: ${(props) => props.theme.themeColor.primary};
+  color: themed.themeColor.secondary;
+  display: "flex";
+  justifycontent: "center";
 
- .menuNameAvatarContainer {
+  .menuNameAvatarContainer {
     width: 100%;
     max-width: 1920px;
     height: 100%;
