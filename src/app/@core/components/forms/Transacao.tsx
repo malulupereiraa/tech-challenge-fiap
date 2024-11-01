@@ -38,6 +38,8 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
     date: yup.date().required(),
   });
 
+  const beforeSubmit = () => initialValue.current.date = new Date();
+
   useEffect(() => {
     setLoading(true);
     !isEdit && !isView
@@ -72,6 +74,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
               <Form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  beforeSubmit();
                   handleSubmit();
                   onSubmitAction && onSubmitAction(e, values);
                   resetForm();
