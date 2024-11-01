@@ -23,7 +23,6 @@ export default function Home() {
   const [toastTitle, setToastTitle] = useState<string>("");
 
   const handleTransacaoForm = async (e: any, formData: any) => {
-    // TODO: function Transacao Form
     await createTransaction(formData)
       .then(() => {
         setShowToast(true);
@@ -55,44 +54,52 @@ export default function Home() {
         showToast={valueToast}
       />
       <TransactionsHeader name="Joana" />
-      <StyledHome>
-        <Col xs={12} sm={12} md={12} lg={12}>
-          <Container>
-            <Row>
-              <Col xl={2} lg={6}>
-                <Menu />
-              </Col>
-              <Col xl={8} lg={6}>
-                <Row className="rowBalance">
-                  <CardTCF
-                    title="Nova Transação"
-                    body={
-                      <TransacaoForm
-                        onSubmitAction={handleTransacaoForm}
-                        showDatePicker={false}
+      <Row>
+        <div className="col-xs-12 col-sm-12 col-md-3 col-xl-2">
+          <div className="d-flex flex-column align-items-center align-items-sm-start">
+            <Menu />
+          </div>
+        </div>
+        <div className="col py-3">
+          <StyledHome>
+            <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+              <Row className="rowBalance">
+                <Col xs={12} sm={12} md={12} lg={12}>
+                      <CardTCF
+                        title="Nova Transação"
+                        body={
+                          <TransacaoForm
+                            onSubmitAction={handleTransacaoForm}
+                            showDatePicker={false}
+                          />
+                        }
                       />
-                    }
-                  />
-                </Row>
-                <Row className="rowCardTCF">
-                  <CardTCF
-                    title="Nova Transação"
-                    body={
-                      <TransacaoForm
-                        onSubmitAction={handleTransacaoForm}
-                        showDatePicker={false}
+                </Col>               
+              </Row>
+              <Row className="rowCardTCF">
+                <Col xs={12} sm={12} md={12} lg={12}>
+                      <CardTCF
+                        title="Nova Transação"
+                        body={
+                          <TransacaoForm
+                            onSubmitAction={handleTransacaoForm}
+                            showDatePicker={false}
+                          />
+                        }
                       />
-                    }
-                  />
-                </Row>
-              </Col>
-              <Col xl={2} lg={6}>
-                <HomeStatement />
-              </Col>
-            </Row>
-          </Container>
-        </Col>
-      </StyledHome>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={12} sm={12} md={4} lg={4} xl={4}>
+              <Row>
+                <Col>
+                  <HomeStatement />
+                </Col>
+              </Row>
+            </Col>
+          </StyledHome>
+        </div>
+      </Row>
     </>
   );
 }
