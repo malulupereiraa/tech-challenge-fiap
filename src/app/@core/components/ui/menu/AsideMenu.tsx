@@ -17,6 +17,7 @@ export default function AsideMenu({ pathname }: { pathname: string }) {
   type StLinkProps = LinkProps & {
     children: React.ReactNode;
     pathname: string;
+    className?: string;
   };
 
   const StateLinkProps = ({
@@ -43,7 +44,7 @@ export default function AsideMenu({ pathname }: { pathname: string }) {
   const VisibleCloseButton = () => {
     return (
       <>
-        {width <= 360 && (
+        {width <= 390 && (
           <button
             className="iconMenuButton iconCloseButton"
             onClick={toggleMenu}
@@ -63,26 +64,23 @@ export default function AsideMenu({ pathname }: { pathname: string }) {
   };
 
   return (
-    <StyledMenu className="row no-gutters menuContainer">
+    <StyledMenu className="row no-gutters">
       <div className="no-gutters menuContainer">
-        <nav className=" itensMenu">
+        <nav className="itensMenu mt-4">
           <VisibleCloseButton />
-          <StateLinkProps pathname={pathname} href="/" children="Início" />
-          <StateLinkProps
-            pathname={pathname}
-            href="/transferencias"
-            children="Transferências"
-          />
-          <StateLinkProps
-            pathname={pathname}
-            href="/investimentos"
-            children="Investimentos"
-          />
-          <StateLinkProps
-            pathname={pathname}
-            href="/outros"
-            children="Outros serviços"
-          />
+          <StateLinkProps pathname={pathname} href="/home">Início</StateLinkProps>
+          <StateLinkProps pathname={pathname} href="/transferencias">
+            Transferências
+          </StateLinkProps>
+          <StateLinkProps pathname={pathname} href="/transacoes">
+            Transações
+          </StateLinkProps>
+          <StateLinkProps pathname={pathname} href="/investimentos">
+            Investimentos
+          </StateLinkProps>
+          <StateLinkProps pathname={pathname} href="/outros">
+            Outros serviços
+          </StateLinkProps>
         </nav>
       </div>
     </StyledMenu>

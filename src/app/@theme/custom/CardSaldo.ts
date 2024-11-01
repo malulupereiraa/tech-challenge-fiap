@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const CardSaldo = styled.div` 
+export const CardSaldo = styled.div`
   display: grid;
   width: 100%;
-  max-width: 690px;
   height: 402px;
   border-radius: 8px;
   background-color: ${(props) => props.theme.themeColor.primary};
@@ -11,22 +10,22 @@ export const CardSaldo = styled.div`
   margin: 0 auto;
   padding: 24px;
   grid-template-columns: 60% 35%;
-  grid-template-rows: 45px auto; 
+  grid-template-rows: 45px auto;
   gap: 12px 100px;
 
   @media (max-width: 768px) {
     height: auto;
-    grid-template-columns: 1fr; 
-    grid-template-rows: max-content max-content; 
-    gap: 12px; 
-    padding: 16px; 
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    gap: 12px;
+    padding: 16px;
   }
 
   @media (max-width: 576px) {
-    height: auto; 
-    grid-template-columns: 1fr; 
-    gap: 8px; 
-    padding: 12px; 
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 12px;
   }
 `;
 
@@ -37,11 +36,14 @@ export const TitleCard = styled.h2`
   font-family: ${({ theme }) => theme.themeFonts.fontFamily};
 
   @media (max-width: 768px) {
-    font-size: ${(props) => props.theme.font_size.fontsizlarge}; /* Reduz a fonte em telas menores */
+    font-size: ${(props) =>
+      props.theme.font_size.fontsizlarge}; /* Reduz a fonte em telas menores */
   }
 
   @media (max-width: 576px) {
-    font-size: ${(props) => props.theme.font_size.fontsizesmall}; /* Ajuste adicional em telas pequenas */
+    font-size: ${(props) =>
+      props.theme.font_size
+        .fontsizesmall}; /* Ajuste adicional em telas pequenas */
   }
 `;
 
@@ -64,8 +66,8 @@ export const ContentContainer = styled.div`
   grid-row: 1;
 `;
 
-export const ContentBalanceContainer = styled.div`  
-  width:60%;
+export const ContentBalanceContainer = styled.div`
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -77,7 +79,7 @@ export const ContentBalanceContainer = styled.div`
 export const BalanceRow = styled.div`
   width: 70%;
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: space-between;
   font-size: 1.2rem;
   font-weight: bold;
@@ -117,7 +119,7 @@ export const SubTitleBalance = styled.p`
   font-weight: 400;
 
   @media (max-width: 768px) {
-    font-size: ${(props) => props.theme.font_size.fontsizesmall}; 
+    font-size: ${(props) => props.theme.font_size.fontsizesmall};
   }
 `;
 
@@ -131,4 +133,4 @@ export const ButtonIcon = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-`
+`;

@@ -9,21 +9,19 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from "react";
-import Placeholder from 'react-bootstrap/Placeholder';
+import Placeholder from "react-bootstrap/Placeholder";
 
-export default ({
-  transactions,
-  loading
-}: Props) => {
+export default ({ transactions, loading }: Props) => {
   const [sortDirection, setSortDirection] = useState(-1);
   const [filter, setFilter] = useState<"positive" | "negative" | "all">("all");
 
-  const sortByDate = (transactionA: StatementItemProps, transactionB: StatementItemProps) => {
-    if (transactionA.date < transactionB.date)
-      return sortDirection * -1;
+  const sortByDate = (
+    transactionA: StatementItemProps,
+    transactionB: StatementItemProps
+  ) => {
+    if (transactionA.date < transactionB.date) return sortDirection * -1;
 
-    if (transactionA.date > transactionB.date)
-      return sortDirection * 1;
+    if (transactionA.date > transactionB.date) return sortDirection * 1;
 
     return 0;
   };
@@ -39,66 +37,76 @@ export default ({
       default:
         setFilter("all");
         break;
-    };
+    }
   };
 
   const filteredTransactions = () => {
-    if (filter == 'positive')
-      return transactions.filter(transaction => transaction.amount > 0);
+    if (transactions === undefined)
+      return [];
 
-    if (filter == 'negative')
-      return transactions.filter(transaction => transaction.amount < 0);
+    if (filter == "positive")
+      return transactions.filter((transaction) => transaction.amount > 0);
+
+    if (filter == "negative")
+      return transactions.filter((transaction) => transaction.amount < 0);
 
     return transactions;
   };
 
   const transactionsByMonth = () => {
-    const transactionsWithParsedDate =
-      filteredTransactions()
-        .map((transaction: StatementItemProps) => {
-          if (typeof (transaction.date) !== "string")
-            return transaction;
+    const transactionsWithParsedDate = filteredTransactions()
+      .map((transaction: StatementItemProps) => {
+        if (typeof transaction.date !== "string") return transaction;
 
-          return Object.assign(transaction, {
-            date: new Date(`${transaction.date}T00:00:00`)
-          });
-        })
-        .sort(sortByDate);
-
-    return Object.groupBy(transactionsWithParsedDate, (transaction: StatementItemProps) => {
-      return (transaction.date as Date).toLocaleDateString("pt-BR", {
-        month: "long"
+        return Object.assign(transaction, {
+          date: new Date(`${transaction.date}T00:00:00`),
+        });
       })
-    });
+      .sort(sortByDate);
+
+    return Object.groupBy(
+      transactionsWithParsedDate,
+      (transaction: StatementItemProps) => {
+        return (transaction.date as Date).toLocaleDateString("pt-BR", {
+          month: "long",
+        });
+      }
+    );
   };
 
   const filterIcon = () => {
-    if(filter == 'all')
-      return <FaArrowRightArrowLeft />;
+    if (filter == "all") return <FaArrowRightArrowLeft />;
 
-    if(filter == 'positive')
-      return <FaArrowRightLong />;
+    if (filter == "positive") return <FaArrowRightLong />;
 
     return <FaArrowLeftLong />;
   };
 
-  const placeholder = () => {
-    return <div className="section-placeholder">
-      {[1, 2].map(() => (
-        <div className="section-item-placeholder">
-          <h6>
-            <Placeholder animation="wave"><Placeholder xs={4} /></Placeholder>
-          </h6>
-          <div>
-            <Placeholder animation="wave"><Placeholder xs={12} /></Placeholder>
+  const placeholder = (): JSX.Element => {
+    return (
+      <div className="section-placeholder">
+        {[1, 2].map(() => (
+          <div className="section-item-placeholder">
+            <h6>
+              <Placeholder animation="wave">
+                <Placeholder xs={4} />
+              </Placeholder>
+            </h6>
+            <div>
+              <Placeholder animation="wave">
+                <Placeholder xs={12} />
+              </Placeholder>
+            </div>
+            <div>
+              <Placeholder animation="wave">
+                <Placeholder xs={8} />
+              </Placeholder>
+            </div>
           </div>
-          <div>
-            <Placeholder animation="wave"><Placeholder xs={8} /></Placeholder>
-          </div>
-        </div>
-      ))}
-    </div>;
-  }
+        ))}
+      </div>
+    );
+  };
 
   return (
     <Container>
@@ -114,24 +122,29 @@ export default ({
           />
           <Button
             size="sm"
-            icon={sortDirection < 0 ? <FaArrowDownWideShort /> : <FaArrowDownShortWide />}
+            icon={
+              sortDirection < 0 ? (
+                <FaArrowDownWideShort />
+              ) : (
+                <FaArrowDownShortWide />
+              )
+            }
             rounded={true}
-            onClick={() => setSortDirection(d => d * -1)}
+            onClick={() => setSortDirection((d) => d * -1)}
             disabled={loading}
           />
         </div>
       </header>
 
-      {loading ? (
-        placeholder()
-      ) : (
-        Object.entries(transactionsByMonth()).map((monthTransactions) => (
-          <StatementSection
-            month={monthTransactions[0]}
-            items={monthTransactions[1] as StatementItemProps[]}
-          />
-        ))
-      )}
+      {loading
+        ? placeholder()
+        : Object.entries(transactionsByMonth()).map((monthTransactions) => (
+            <StatementSection
+              key={monthTransactions[0]}
+              month={monthTransactions[0]}
+              items={monthTransactions[1] as StatementItemProps[]}
+            />
+          ))}
     </Container>
   );
 };

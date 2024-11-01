@@ -12,7 +12,6 @@ import DatatableTCF from "../@core/components/ui/Datatable";
 import ButtonTCF from "../@core/components/ui/Button";
 import ModalTCF from "../@core/components/ui/Modal";
 import TransacaoForm from "../@core/components/forms/Transacao";
-import { navigate } from "../actions";
 
 export default function Transacoes() {
   const [transactions, setTransactions] = useState<any>([]);
@@ -252,8 +251,6 @@ export default function Transacoes() {
         title={toastTitle}
         showToast={valueToast}
       />
-      <Row>
-        <Col xs={12} sm={12} md={12} lg={12}>
           <CardTCF
             title="Listagem de Transações"
             body={
@@ -270,18 +267,7 @@ export default function Transacoes() {
                 dataToForm={dataToForm}
               />
             }
-            footer={
-              <ButtonTCF
-                variant={"base"}
-                label={"Voltar para Home"}
-                disabled={false}
-                size={"sm"}
-                onClick={() => navigate()}
-              />
-            }
           />
-        </Col>
-      </Row>
       <ModalTCF
         title="Remover Transação"
         isOpen={isModalOpen}
@@ -299,7 +285,7 @@ export default function Transacoes() {
 
 export function ListagemComponent(props: any) {
   return (
-    <>
+    <>      
       <Row>
         <Col
           xs={12}
