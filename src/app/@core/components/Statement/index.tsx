@@ -1,5 +1,5 @@
 import Container from "./Container";
-import Button from "@/app/@core/components/ui/button/Button";
+import Button from "@/app/@core/components/ui/Button";
 import Props from "@/app/@core/props/statement/statement";
 import StatementItemProps from "../../props/statement/statement-item";
 import StatementSection from "./StatementSection";
@@ -41,6 +41,9 @@ export default ({ transactions, loading }: Props) => {
   };
 
   const filteredTransactions = () => {
+    if (transactions === undefined)
+      return [];
+
     if (filter == "positive")
       return transactions.filter((transaction) => transaction.amount > 0);
 
@@ -79,7 +82,7 @@ export default ({ transactions, loading }: Props) => {
     return <FaArrowLeftLong />;
   };
 
-  const placeholder = () => {
+  const placeholder = (): JSX.Element => {
     return (
       <div className="section-placeholder">
         {[1, 2].map(() => (
@@ -137,6 +140,7 @@ export default ({ transactions, loading }: Props) => {
         ? placeholder()
         : Object.entries(transactionsByMonth()).map((monthTransactions) => (
             <StatementSection
+              key={monthTransactions[0]}
               month={monthTransactions[0]}
               items={monthTransactions[1] as StatementItemProps[]}
             />

@@ -1,7 +1,7 @@
 import { Col, Form, Row } from "react-bootstrap";
 import Image from "next/image";
 import { LoginFormProps } from "../../props/login-form";
-import ButtonTCF from "../ui/Button/Button";
+import ButtonTCF from "../ui/Button";
 import * as formik from "formik";
 import * as yup from "yup";
 import { RowCentered } from "../../../@theme/custom/RowCenter";
@@ -44,7 +44,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSubmitAction }) => {
             onSubmit={(e) => {
               e.preventDefault();
               handleSubmit();
-              onSubmitAction(values);
+              onSubmitAction && onSubmitAction(values);
             }}
           >
             <RowCentered className="mb-5">

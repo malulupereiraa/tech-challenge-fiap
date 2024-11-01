@@ -49,20 +49,5 @@ export default function HomeStatement() {
   useEffect(requestTransactions, [state.loading]);
   useEffect(loadTransactions, []);
 
-  if (!state.list) {
-    const placeHolderStyle = {
-      height: "600px",
-      borderRadius: "12px",
-    };
-
-    return (
-      <>
-        <Placeholder as="div" animation="wave" bg="success">
-          <Placeholder xs={12} size="lg" style={placeHolderStyle} />
-        </Placeholder>
-      </>
-    );
-  }
-
-  return <Statement loading transactions={state.list} />;
+  return <Statement loading={state.loading || !state.list} transactions={state.list} />;
 }

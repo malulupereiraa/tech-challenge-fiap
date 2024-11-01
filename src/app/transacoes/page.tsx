@@ -2,15 +2,15 @@
 "use client";
 
 import { Row, Col } from "react-bootstrap";
-import CardTCF from "../@core/components/ui/Card/Card";
+import CardTCF from "../@core/components/ui/Card";
 import { useEffect, useRef, useState } from "react";
 import ToastTCF from "../@core/components/Toast";
 import { createTransaction, deleteTransaction, listTransactions, showTransaction, updateTransaction } from "../@core/services/transaction_service";
 import { GridColDef } from "@mui/x-data-grid";
 import BaseActions from "../@core/components/ui/Datatable/BaseActions";
-import DatatableTCF from "../@core/components/ui/Datatable/Datatable";
-import ButtonTCF from "../@core/components/ui/Button/Button";
-import ModalTCF from "../@core/components/ui/Modal/Modal";
+import DatatableTCF from "../@core/components/ui/Datatable";
+import ButtonTCF from "../@core/components/ui/Button";
+import ModalTCF from "../@core/components/ui/Modal";
 import TransacaoForm from "../@core/components/forms/Transacao";
 import { navigate } from "../actions";
 
@@ -29,7 +29,6 @@ export default function Transacoes() {
   const [icon, setIcon] = useState<any>("");
   const [toastTitle, setToastTitle] = useState<string>("");
   const [dataToForm, setDataToForm] = useState<any>();
-  
 
   const handleDeleteClose = () => {
     setIsModalOpen(false);
@@ -154,7 +153,7 @@ export default function Transacoes() {
   };
 
   const fetchTransactions = async () => {
-    
+
     try {
       await listTransactions()
         .then((res: any) => {

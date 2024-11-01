@@ -3,6 +3,6 @@
 import StatementItemProps from "../../props/statement/statement-item";
 
 export default interface StatementItemPropsProps {
-  transactions: StatementItemProps[],
+  transactions: StatementItemProps[] | undefined,
   loading: boolean
 };

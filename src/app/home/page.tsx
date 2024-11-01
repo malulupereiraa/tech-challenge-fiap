@@ -2,7 +2,7 @@
 "use client";
 
 import { Row, Col, Container } from "react-bootstrap";
-import CardTCF from "../@core/components/ui/Card/Card";
+import CardTCF from "../@core/components/ui/Card";
 import TransacaoForm from "../@core/components/forms/Transacao";
 import { createTransaction } from "../@core/services/transaction_service";
 import { useState } from "react";
@@ -11,6 +11,7 @@ import Menu from "../@core/components/ui/menu/Menu";
 import TransactionsHeader from "../@core/components/ui/header-transactions/TransactionsHeader";
 import HomeStatement from "./page.home-statement";
 import StyledHome from "./styledHome";
+import CardSaldoComponent from "../@core/components/ui/CardSaldo/CardSaldo";
 
 export default function Home() {
   const transactions = [
@@ -47,6 +48,15 @@ export default function Home() {
 
   return (
     <>
+      <Row>
+        <Col xs={12} sm={12} md={12} lg={12}>
+          <CardSaldoComponent
+            name="Cibele"
+            balance={5000}
+            showBalance={false}
+          />
+        </Col>
+      </Row>
       <ToastTCF
         icon={icon}
         message={message}
