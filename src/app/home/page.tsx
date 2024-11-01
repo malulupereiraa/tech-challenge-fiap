@@ -59,7 +59,7 @@ export default function Home() {
         <Row className="rowBalance">
           <Col xs={12} sm={12} md={12} lg={12}>
             <CardSaldoComponent
-              name="Cibele"
+              name="CibelHermelindae"
               balance={5000}
               showBalance={false}
             />
