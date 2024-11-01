@@ -19,12 +19,9 @@ export default ({ transactions, loading }: Props) => {
     transactionA: StatementItemProps,
     transactionB: StatementItemProps
   ) => {
-    const timestampA = Date.parse(transactionA.date as string);
-    const timestampB = Date.parse(transactionB.date as string);
+    if (transactionA.date < transactionB.date) return sortDirection * -1;
 
-    if (timestampA < timestampB) return sortDirection * -1;
-
-    if (timestampA > timestampB) return sortDirection * 1;
+    if (transactionA.date > transactionB.date) return sortDirection * 1;
 
     return 0;
   };
@@ -58,13 +55,14 @@ export default ({ transactions, loading }: Props) => {
 
   const transactionsByMonth = () => {
     const transactionsWithParsedDate = filteredTransactions()
-      .sort(sortByDate)
       .map((transaction: StatementItemProps) => {
+        if (typeof transaction.date !== "string") return transaction;
+
         return Object.assign(transaction, {
-          date: new Date(transaction.date),
+          date: new Date(`${transaction.date}T00:00:00`),
         });
       })
-      .slice(0,9);
+      .sort(sortByDate);
 
     return Object.groupBy(
       transactionsWithParsedDate,
@@ -87,8 +85,8 @@ export default ({ transactions, loading }: Props) => {
   const placeholder = (): JSX.Element => {
     return (
       <div className="section-placeholder">
-        {[1, 2].map(() => (
-          <div className="section-item-placeholder">
+        {[1, 2].map((index: number) => (
+          <div key={index} className="section-item-placeholder">
             <h6>
               <Placeholder animation="wave">
                 <Placeholder xs={4} />
