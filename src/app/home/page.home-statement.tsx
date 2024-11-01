@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useReducer } from "react";
-import Placeholder from "react-bootstrap/Placeholder";
 import Statement from "@/app/@core/components/Statement";
 import { listTransactions } from "@/app/@core/services/transaction_service";
 
@@ -25,16 +24,20 @@ const reducer = (state: HomeState, action: HomeAction) => {
     case "load":
       return { ...state, loading: true };
     case "ready":
-      return { loading: false, list: action.newList };
+      return { ...state, loading: false, list: action.newList };
     default:
       return state;
   }
 };
 
-export default function HomeStatement() {
+export default function HomeStatement({ reload }: { reload: boolean }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const loadTransactions = () => dispatch({ type: "load" });
+
+  const reloadTransacations = () => {
+    if(reload) loadTransactions();
+  }
 
   const requestTransactions = () => {
     if (state.loading === false) return;
@@ -47,6 +50,7 @@ export default function HomeStatement() {
   };
 
   useEffect(requestTransactions, [state.loading]);
+  useEffect(reloadTransacations, [reload]);
   useEffect(loadTransactions, []);
 
   return <Statement loading={state.loading || !state.list} transactions={state.list} />;
