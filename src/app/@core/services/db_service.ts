@@ -15,9 +15,9 @@ export const dbCreateTransaction = async (data: object) => {
   const nanoid = customAlphabet("1234567890abcdef", 9);
   const id = nanoid();
 
-  data = { ...data, id };
+  const transaction: Transaction = { ...data, id } as Transaction;
 
-  db.data.transactions.push(data as Transaction);
+  db.data.transactions.push(transaction);
 
   await db.write();
 
@@ -51,7 +51,7 @@ export const dbDeleteTransaction = async (id: string) => {
 
 export const dbUpdateTransaction = async (
   id: string,
-  userData: Transaction
+  transactionData: Transaction
 ): Promise<Transaction | undefined> => {
   const db = await openDB();
   const { transactions } = db.data;
@@ -61,18 +61,18 @@ export const dbUpdateTransaction = async (
 
   if (index < 0) return;
 
-  const user: Transaction = transactions[index];
+  const transaction: Transaction = transactions[index];
 
-  const newUserData: Transaction = {
-    ...userData,
-    id: user.id,
+  const newtransactionData: Transaction = {
+    ...transactionData,
+    id: transaction.id,
   };
 
-  transactions[index] = newUserData;
+  transactions[index] = newtransactionData;
 
   db.update((data: Transactions) => (data.transactions = transactions));
 
-  return newUserData;
+  return newtransactionData;
 };
 
 const openDB = async () => {

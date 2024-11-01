@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
     return (
         <Suspense fallback={<Loading />}>
-            <TransactionsHeader name="Joana" />
+            <TransactionsHeader name="Hermelinda" />
             <Row>
         <div className="col-xs-12 col-sm-12 col-md-3 col-xl-2">
           <div className="d-flex flex-column align-items-center align-items-sm-start h-100">
@@ -37,14 +37,14 @@ export default function RootLayout({
               <Row className="rowBalance">
                 <Col xs={12} sm={12} md={12} lg={12}>
                 {children}
-                </Col>               
+                </Col>
               </Row>
             </Col>
           </StyledHome>
         </div>
       </Row>
-             
-                
+
+
                 </Suspense>
   );
 }

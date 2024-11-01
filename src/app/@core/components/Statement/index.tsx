@@ -55,14 +55,13 @@ export default ({ transactions, loading }: Props) => {
 
   const transactionsByMonth = () => {
     const transactionsWithParsedDate = filteredTransactions()
+      .sort(sortByDate)
       .map((transaction: StatementItemProps) => {
-        if (typeof transaction.date !== "string") return transaction;
-
         return Object.assign(transaction, {
-          date: new Date(`${transaction.date}T00:00:00`),
+          date: new Date(transaction.date)
         });
       })
-      .sort(sortByDate);
+      .slice(0, 9);
 
     return Object.groupBy(
       transactionsWithParsedDate,
@@ -85,8 +84,8 @@ export default ({ transactions, loading }: Props) => {
   const placeholder = (): JSX.Element => {
     return (
       <div className="section-placeholder">
-        {[1, 2].map(() => (
-          <div className="section-item-placeholder">
+        {[1, 2].map((index: number) => (
+          <div key={index} className="section-item-placeholder">
             <h6>
               <Placeholder animation="wave">
                 <Placeholder xs={4} />

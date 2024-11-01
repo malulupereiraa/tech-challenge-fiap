@@ -16,6 +16,6 @@ type Story = StoryObj<HeaderProps>;
 
 export const CurrentHeader: Story = {
   args: {
-    name: "Joana da Silva Oliveira",
+    name: "Hermelinda da Silva Oliveira",
   },
 };
