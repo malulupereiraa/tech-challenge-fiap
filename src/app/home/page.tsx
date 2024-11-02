@@ -11,7 +11,6 @@ import HomeStatement from "./page.home-statement";
 import CardSaldoComponent from "../@core/components/ui/CardSaldo/CardSaldo";
 
 export default function Home() {
-
   const [valueToast, setShowToast] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
   const [icon, setIcon] = useState<any>("");
@@ -43,8 +42,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if(reloadStatement === true)
-      setReloadStatement(false);
+    if (reloadStatement === true) setReloadStatement(false);
   }, [reloadStatement]);
 
   return (
