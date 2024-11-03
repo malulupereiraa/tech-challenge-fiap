@@ -2,6 +2,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { ptBR } from "@mui/x-data-grid/locales";
 import Paper from "@mui/material/Paper";
 import { DatatableProps } from "../../../props/datatable";
+import CustomGridToolbar from "./CustomGridToolbar";
 
 const DatatableTCF: React.FC<DatatableProps> = ({
   columns,
@@ -29,6 +30,7 @@ const DatatableTCF: React.FC<DatatableProps> = ({
               fontWeight: "bold",
             },
           }}
+          slots={{ toolbar: CustomGridToolbar }}
           loading={loading}
         />
       </Paper>

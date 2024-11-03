@@ -23,24 +23,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
     return (
-        <>
+      <>
         <TransactionsHeader name="Hermelinda" />
-            <Row>
-        <div className="col-xs-12 col-sm-12 col-md-3 col-xl-2">
-          <div className="d-flex flex-column align-items-center align-items-sm-start h-100">
-            <Menu />
+        <Row>
+          <div className="col-xs-12 col-sm-12 col-md-3 col-xl-2">
+            <div className="d-flex flex-column align-items-center align-items-sm-start h-100">
+              <Menu />
+            </div>
           </div>
-        </div>
-                <Suspense fallback={<Loading />}>
-        <div className="col py-3">
-          <StyledHome>
-                {children}
-          </StyledHome>
-        </div>
-                </Suspense>
-      </Row>
-        </>
-
-
-  );
+          <Suspense fallback={<Loading />}>
+            <div className="col-xs-12 col-sm-12 col-md-9 col-xl-10 py-3">
+              <StyledHome>{children}</StyledHome>
+            </div>
+          </Suspense>
+        </Row>
+      </>
+    );
 }
