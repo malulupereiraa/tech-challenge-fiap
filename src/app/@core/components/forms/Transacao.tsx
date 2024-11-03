@@ -91,7 +91,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                         aria-label="Transacao"
                         name="transactionType"
                         onChange={handleChange}
-                        value={values.transaction}
+                        value={values.transactionType}
                         disabled={isView}
                         isValid={touched.transaction && !errors.transaction}
                       >
