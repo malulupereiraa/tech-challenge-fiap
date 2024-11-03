@@ -8,8 +8,13 @@ export default ({
   amount,
   date
 }: Props) => {
-  const formattedAmount = amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
-  const translatedTransactionType = transactionType == "deposit" ? "Depósito" : "Transferência";
+  const translatedTransactionType = transactionType == "deposito" ? "Depósito" : "Transferência";
+  const amountMultiplier = transactionType == "deposito" ? 1 : -1;
+
+  const formattedAmount = (amount * amountMultiplier).toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL"
+  });
 
   const formattedDate = () => {
     const parsedDate = typeof (date) === 'number' ? (new Date(date)) : date as Date;

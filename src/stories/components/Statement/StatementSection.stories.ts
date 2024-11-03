@@ -47,19 +47,19 @@ export const Default: Story = {
     items: [
       {
         id: "abc123",
-        transactionType: "deposit",
+        transactionType: "deposito",
         date: new Date("2024-01-01T00:00:00"),
         amount: 36.6
       },
       {
         id: "efg456",
-        transactionType: "deposit",
+        transactionType: "deposito",
         date: new Date("2024-01-02T00:00:00"),
         amount: 48.3
       },
       {
         id: "hij789",
-        transactionType: "deposit",
+        transactionType: "pix",
         date: new Date("2024-01-03T00:00:00"),
         amount: 150
       }

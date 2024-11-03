@@ -152,6 +152,13 @@ export default function Transacoes() {
   };
 
   const fetchTransactions = async () => {
+    const transactionTypeDictionary = new Map<string, string>([
+      ["ted", "TED"],
+      ["tef", "TEF"],
+      ["pix", "PIX"],
+      ["debito", "Débito"],
+      ["deposito", "Depósito"]
+    ]);
 
     try {
       await listTransactions()
@@ -168,16 +175,8 @@ export default function Transacoes() {
           const transacoesToTable = res.map((item: any) => {
             return {
               ...item,
-              transaction:
-                item.transaction === "1"
-                  ? "TED"
-                  : item.transaction === "2"
-                  ? "TEF"
-                  : item.transaction === "3"
-                  ? "PIX"
-                  : item.transaction === "4"
-                  ? "Débito"
-                  : item.transaction,
+              amount: item.transactionType == "deposito" ? item.amount : item.amount * -1,
+              transaction: transactionTypeDictionary.get(item.transactionType),
               date: new Date(item.date).toLocaleDateString("pt-br", options),
             };
           });
@@ -285,7 +284,7 @@ export default function Transacoes() {
 
 export function ListagemComponent(props: any) {
   return (
-    <>      
+    <>
       <Row>
         <Col
           xs={12}

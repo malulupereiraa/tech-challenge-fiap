@@ -27,7 +27,7 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
   const [loading, setLoading] = useState(true);
 
   const schema = yup.object().shape({
-    transaction: yup
+    transactionType: yup
       .string()
       .required("Por favor, escolha um tipo de transação!"),
     amount: yup
@@ -89,17 +89,18 @@ const TransacaoForm: React.FC<TransacaoFormProps> = ({
                       <FormLabelStrong>Tipo de Transação</FormLabelStrong>
                       <Form.Select
                         aria-label="Transacao"
-                        name="transaction"
+                        name="transactionType"
                         onChange={handleChange}
                         value={values.transaction}
                         disabled={isView}
                         isValid={touched.transaction && !errors.transaction}
                       >
                         <option>Selecione o Tipo de Transação</option>
-                        <option value="1">TED</option>
-                        <option value="2">TEF</option>
-                        <option value="3">PIX</option>
-                        <option value="4">Débito</option>
+                        <option value="deposito">Depósito</option>
+                        <option value="debito">Débito</option>
+                        <option value="pix">PIX</option>
+                        <option value="ted">TED</option>
+                        <option value="tef">TEF</option>
                       </Form.Select>
                       {errors.transaction && touched.transaction && (
                         <ErrorMessage>

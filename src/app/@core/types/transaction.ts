@@ -1,4 +1,4 @@
-export type TransactionType = "deposit" | "transference";
+export type TransactionType = "deposito" | "debito" | "pix" | "ted" | "tef";
 
 export type Transaction = {
   id: string,

@@ -45,10 +45,10 @@ export default ({ transactions, loading }: Props) => {
       return [];
 
     if (filter == "positive")
-      return transactions.filter((transaction) => transaction.amount > 0);
+      return transactions.filter((transaction) => transaction.transactionType == "deposito");
 
     if (filter == "negative")
-      return transactions.filter((transaction) => transaction.amount < 0);
+      return transactions.filter((transaction) => transaction.transactionType != "deposito");
 
     return transactions;
   };

@@ -26,7 +26,7 @@ const meta = {
     transactionType: {
       description: "The type of the transaction",
       control: "radio",
-      options: ["deposit", "transference"]
+      options: ["deposito", "debito", "pix", "ted", "tef"]
     }
   },
 } satisfies Meta<StatementItemPros>;
@@ -38,7 +38,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     id: "abc123",
-    transactionType: "deposit",
+    transactionType: "deposito",
     amount: 36.6,
     date: new Date("2024-09-06T00:00:00")
   },
