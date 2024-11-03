@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import ToastTCF from "../@core/components/Toast";
 import HomeStatement from "./page.home-statement";
 import CardSaldoComponent from "../@core/components/ui/CardSaldo/CardSaldo";
+import { Transaction } from "../@core/types/transaction";
 
 export default function Home() {
   const [valueToast, setShowToast] = useState<boolean>(false);
@@ -16,6 +17,7 @@ export default function Home() {
   const [icon, setIcon] = useState<any>("");
   const [toastTitle, setToastTitle] = useState<string>("");
   const [reloadStatement, setReloadStatement] = useState<boolean>(false);
+  const [balance, setBalance] = useState(0);
 
   const handleTransacaoForm = async (e: any, formData: any) => {
     await createTransaction(formData)
@@ -45,6 +47,16 @@ export default function Home() {
     if (reloadStatement === true) setReloadStatement(false);
   }, [reloadStatement]);
 
+  const calculateBalance = (transactions: []) => {
+    setBalance((_) => {
+      return transactions.reduce((sum, transaction: Transaction) => {
+        const amountMultiplier = transaction.transactionType == "deposito" ? 1 : -1;
+
+        return sum + (transaction.amount * amountMultiplier);
+      }, 0);
+    });
+  };
+
   return (
     <>
       <ToastTCF
@@ -58,7 +70,7 @@ export default function Home() {
           <Col xs={12} sm={12} md={12} lg={12}>
             <CardSaldoComponent
               name="Hermelinda"
-              balance={5000}
+              balance={balance}
               showBalance={false}
             />
           </Col>
@@ -80,7 +92,10 @@ export default function Home() {
       <Col xs={12} sm={12} md={4} lg={4} xl={4}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12}>
-            <HomeStatement reload={reloadStatement} />
+            <HomeStatement
+              onTransactionsLoaded={calculateBalance}
+              reload={reloadStatement}
+            />
           </Col>
         </Row>
       </Col>

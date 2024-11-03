@@ -30,7 +30,12 @@ const reducer = (state: HomeState, action: HomeAction) => {
   }
 };
 
-export default function HomeStatement({ reload }: { reload: boolean }) {
+interface Props {
+  reload: boolean,
+  onTransactionsLoaded: (_: []) => void
+}
+
+export default function HomeStatement({ reload, onTransactionsLoaded }: Props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const loadTransactions = () => dispatch({ type: "load" });
@@ -46,6 +51,8 @@ export default function HomeStatement({ reload }: { reload: boolean }) {
   };
 
   const handleLoadedTransactions = (requestResult: any) => {
+    onTransactionsLoaded(requestResult);
+
     dispatch({ type: "ready", newList: requestResult });
   };
 

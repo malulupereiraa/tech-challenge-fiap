@@ -2,13 +2,13 @@ import Container from "./Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Props from "@/app/@core/props/statement/statement-item";
+import transactionTypeDictionary from "@/app/@core/utils/transaction-type-dictionary";
 
 export default ({
   transactionType,
   amount,
   date
 }: Props) => {
-  const translatedTransactionType = transactionType == "deposito" ? "Depósito" : "Transferência";
   const amountMultiplier = transactionType == "deposito" ? 1 : -1;
 
   const formattedAmount = (amount * amountMultiplier).toLocaleString("pt-br", {
@@ -29,7 +29,7 @@ export default ({
       <Row>
         <Col>
           <h6 className="statement-item-title">
-            {translatedTransactionType}
+            {transactionTypeDictionary.get(transactionType)}
           </h6>
           <span className="statement-item-amount">
             {formattedAmount}

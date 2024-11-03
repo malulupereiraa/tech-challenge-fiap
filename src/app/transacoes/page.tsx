@@ -12,6 +12,7 @@ import DatatableTCF from "../@core/components/ui/Datatable";
 import ButtonTCF from "../@core/components/ui/Button";
 import ModalTCF from "../@core/components/ui/Modal";
 import TransacaoForm from "../@core/components/forms/Transacao";
+import transactionTypeDictionary from "@/app/@core/utils/transaction-type-dictionary";
 
 export default function Transacoes() {
   const [transactions, setTransactions] = useState<any>([]);
@@ -152,14 +153,6 @@ export default function Transacoes() {
   };
 
   const fetchTransactions = async () => {
-    const transactionTypeDictionary = new Map<string, string>([
-      ["ted", "TED"],
-      ["tef", "TEF"],
-      ["pix", "PIX"],
-      ["debito", "Débito"],
-      ["deposito", "Depósito"]
-    ]);
-
     try {
       await listTransactions()
         .then((res: any) => {
